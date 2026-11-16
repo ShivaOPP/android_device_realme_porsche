@@ -395,5 +395,23 @@
     "file": "device/realme/porsche/sepolicy/vendor/hwservice.te",
     "old": "type vendor_hal_osense_hwservice, hwservice_manager_type, protected_hwservice;",
     "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/attributes",
+    "old": "attribute hal_dms;",
+    "owner": "hardware/dolby/sepolicy/vendor/attributes",
+    "reason": "Duplicate declaration found by actual calcite checkpolicy build"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/attributes",
+    "old": "attribute hal_dms_client;",
+    "owner": "hardware/dolby/sepolicy/vendor/attributes",
+    "reason": "Duplicate declaration found by actual calcite checkpolicy build"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/attributes",
+    "old": "attribute hal_dms_server;",
+    "owner": "hardware/dolby/sepolicy/vendor/attributes",
+    "reason": "Duplicate declaration found by actual calcite checkpolicy build"
   }
 ]
