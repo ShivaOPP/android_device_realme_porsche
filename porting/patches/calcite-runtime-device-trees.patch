@@ -1,0 +1,31 @@
+--- a/device/qcom/common/generate_extra_images.mk
++++ b/device/qcom/common/generate_extra_images.mk
+@@ -131,10 +131,13 @@
+ possible_dtbo_dirs = $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/arch/arm64/boot/dts $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/arch/arm/boot/dts
+ $(shell mkdir -p $(possible_dtbo_dirs))
+ dtbo_dir = $(firstword $(wildcard $(possible_dtbo_dirs)))
+-dtbo_objs = $(shell find $(dtbo_dir) -name \*.dtbo)
++# TODO(porsche): resolve overlays after the kernel prerequisite has completed.
++# Kati expands $(shell ...) while generating Ninja, before a clean kernel build.
++dtbo_objs = $$(find $(dtbo_dir) -type f -name \*.dtbo | LC_ALL=C sort)
+ 
+ define build-dtboimage-target
+     $(call pretty,"Target dtbo image: $(BOARD_PREBUILT_DTBOIMAGE)")
++    $(hide) test -n "$$(find $(dtbo_dir) -type f -name \*.dtbo -print -quit)"
+     $(hide) $(MKDTIMG) create $@ --page_size=$(BOARD_KERNEL_PAGESIZE) $(dtbo_objs)
+     $(hide) chmod a+r $@
+ endef
+--- a/device/qcom/kernelscripts/kernel_definitions.mk
++++ b/device/qcom/kernelscripts/kernel_definitions.mk
+@@ -351,6 +351,8 @@
+ 
+ # Creating a dtb.img once the kernel is compiled if TARGET_KERNEL_APPEND_DTB is set to be false
+ $(INSTALLED_DTBIMAGE_TARGET): $(INSTALLED_KERNEL_TARGET) $(RTIC_DTB)
+-	cat $(shell find $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtb" | sort) > $@
+-
+-endif
++	# TODO(porsche): resolve DTBs at execution time, after the kernel build.
++	cat $$(find $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtb" | LC_ALL=C sort) > $@
++	test -s $@
++
++endif

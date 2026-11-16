@@ -98,6 +98,12 @@ firmware images. This establishes source coverage, **not** ELF symbol closure,
 VINTF compatibility or boot success. Keep Soong's ELF checks and SELinux
 neverallows enabled.
 
+The standalone selected kernel has compiled its Image, all 88 modules, three
+Porsche DTBs and two Porsche DTBOs with Clang r563880c. Every A17 normal and
+recovery module load-list entry exists. `kernel-validation.json` records the
+outputs. A two-entry DTBO packing check fits the verified 24 MiB partition.
+This does not establish correctness of the shared ROM image packing recipes.
+
 The common tree exports real kernel UAPI installed from the selected kernel,
 including camera, audio and display headers. `kernel-headers.json` records their
 hashes and provenance; regenerate them with
@@ -112,14 +118,26 @@ configuration variable. HIDL services are retained where the primary reference
 and proprietary interfaces require them.
 
 Remaining work is tracked by the current build log `.repo/porsche-build.log`.
-Soong graph generation has passed once; Kati, actual module compilation,
-SELinux/VINTF, kernel/images and a ROM build still need to finish before this is
+Soong graph generation has passed; Kati, userspace module compilation,
+SELinux/VINTF, integrated images and a ROM build still need to finish before this is
 a flashable candidate. In particular:
 
-- Check the shared kernel/image pipeline's clean-build DTB/DTBO collection,
-  recovery module copying and WLAN module alias handling against the A17 lists.
+- The shared kernel/image recipes evaluate DTB/DTBO file discovery while Kati
+  generates Ninja, before a clean kernel build. A fix is prepared in
+  `patches/calcite-runtime-device-trees.patch`; applying it to
+  `device/qcom/common` and `device/qcom/kernelscripts` awaits permission because
+  the original directory restriction excludes those repositories.
+- Porsche now declares the verified complete 88-module inventory early, copies
+  six recovery modules into vendor_boot, and preserves the WLAN filename alias.
+  Verify these integrated image rules after Kati passes. Regenerate the inventory
+  after a relevant kernel configuration change with
+  `python3 device/oneplus/sm8350-common/record-kernel-modules.py KERNEL_OUT`.
 - Keep the modern AIDL NFC service together with the reference HIDL eSE
   declarations and verify the merged VINTF manifest, matrices and policy.
+- `resource-migrations.json` records obsolete uvite resources. The dedicated
+  OEM fast-charge status resource has no calcite equivalent; battery speed is
+  calculated from health HAL wattage. Keep this runtime indication on the list
+  for validation. Secure NFC uses the current device capability resource.
 - Compile the retained AOSPA overlays against calcite resources and validate
   fingerprint brightness/press behavior, charging, suspend and Dolby service
   compatibility during eventual runtime testing.

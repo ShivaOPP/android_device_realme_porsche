@@ -27,6 +27,13 @@ TARGET_KERNEL_CONFIG := $(KERNEL_DEFCONFIG)
 KERNEL_CUSTOM_LLVM := false
 KERNEL_FULL_LLVM := true
 
+# TODO(porsche): calcite defines its legacy module archive after Make has
+# already collected image inputs. Supply the verified complete module inventory
+# early, so vendor_dlkm and vendor_boot cannot silently omit modules.
+KERNEL_MODULES_OUT := $(PRODUCT_OUT)/obj/PORSCHE_KERNEL_MODULES
+BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(KERNEL_MODULES_OUT)/,$(strip $(shell cat device/oneplus/sm8350-common/kernel-modules.list)))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_MODULES_OUT)/,$(BOOT_KERNEL_MODULES))
+
 # AOSPA hooks are still consumed by calcite's BoardConfigSoong.mk.
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_porsche
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus

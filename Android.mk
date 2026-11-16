@@ -1,86 +1,18 @@
+# SPDX-License-Identifier: Apache-2.0
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter porsche,$(TARGET_DEVICE)),)
-
+ifeq ($(TARGET_DEVICE),porsche)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
-# Symlinks
-ACDBDATA_SYMLINKS := $(TARGET_OUT_ODM)/etc/acdbdata
-$(ACDBDATA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Creating acdbdata symlinks: $@"
-	@mkdir -p $@
-	$(hide) ln -sf /vendor/etc/acdbdata/adsp_avs_config.acdb $@/adsp_avs_config.acdb
+# TODO(porsche): the A17 common/vendor trees and AOSPA QCOM common install the
+# ACDB, firmware and RFS symlinks. Do not race those modules with uvite's directory
+# recipes (which cleared their contents). The originals remain in Git history.
 
-RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/adsp/
-$(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@rm -rf $@/*
-	@mkdir -p $(dir $@)/readonly/vendor
-	$(hide) ln -sf /data/vendor/tombstones/rfs/lpass $@/ramdumps
-	$(hide) ln -sf /mnt/vendor/persist/rfs/msm/adsp $@/readwrite
-	$(hide) ln -sf /mnt/vendor/persist/rfs/shared $@/shared
-	$(hide) ln -sf /mnt/vendor/persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
-	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
+# Calcite's kernel builder does not consume Lineage TARGET_MODULE_ALIASES.
+# Match the verified A17 alias without changing the driver's firmware behavior.
+$(KERNEL_MODULES_OUT)/qca_cld3_wlan.ko: $(PRODUCT_OUT)/kernel
+	cp $(KERNEL_MODULES_OUT)/wlan.ko $@
 
-RFS_MSM_CDSP_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/cdsp/
-$(RFS_MSM_CDSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@rm -rf $@/*
-	@mkdir -p $(dir $@)/readonly/vendor
-	$(hide) ln -sf /data/vendor/tombstones/rfs/cdsp $@/ramdumps
-	$(hide) ln -sf /mnt/vendor/persist/rfs/msm/cdsp $@/readwrite
-	$(hide) ln -sf /mnt/vendor/persist/rfs/shared $@/shared
-	$(hide) ln -sf /mnt/vendor/persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
-	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
-
-RFS_MSM_MPSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/mpss/
-$(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@rm -rf $@/*
-	@mkdir -p $(dir $@)/readonly/vendor
-	$(hide) ln -sf /data/vendor/tombstones/rfs/modem $@/ramdumps
-	$(hide) ln -sf /mnt/vendor/persist/rfs/msm/mpss $@/readwrite
-	$(hide) ln -sf /mnt/vendor/persist/rfs/shared $@/shared
-	$(hide) ln -sf /mnt/vendor/persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
-	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
-
-RFS_MSM_SLPI_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/slpi/
-$(RFS_MSM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@rm -rf $@/*
-	@mkdir -p $(dir $@)/readonly/vendor
-	$(hide) ln -sf /data/vendor/tombstones/rfs/slpi $@/ramdumps
-	$(hide) ln -sf /mnt/vendor/persist/rfs/msm/slpi $@/readwrite
-	$(hide) ln -sf /mnt/vendor/persist/rfs/shared $@/shared
-	$(hide) ln -sf /mnt/vendor/persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
-	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
-
-RFS_MSM_WPSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/wpss/
-$(RFS_MSM_WPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@rm -rf $@/*
-	@mkdir -p $(dir $@)/readonly/vendor
-	$(hide) ln -sf /data/vendor/olog $@/olog
-	$(hide) ln -sf /data/vendor/tombstones/rfs/wpss $@/ramdumps
-	$(hide) ln -sf /mnt/vendor/persist/rfs/msm/wpss $@/readwrite
-	$(hide) ln -sf /mnt/vendor/persist/rfs/shared $@/shared
-	$(hide) ln -sf /mnt/vendor/persist/hlos_rfs/shared $@/hlos
-	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
-	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
-
-WIFI_FIRMWARE_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/
-$(WIFI_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Creating wifi firmware symlinks: $@"
-	@mkdir -p $@/wlan/qca_cld
-	$(hide) ln -sf /data/vendor/firmware/wlanmdsp.mbn $@/wlanmdsp.otaupdate
-	$(hide) ln -sf /mnt/vendor/persist/wlan_mac.bin $@/wlan/qca_cld/wlan_mac.bin
-
-ALL_DEFAULT_INSTALLED_MODULES += \
-    $(ACDBDATA_SYMLINKS) \
-    $(RFS_MSM_ADSP_SYMLINKS) \
-    $(RFS_MSM_CDSP_SYMLINKS) \
-    $(RFS_MSM_MPSS_SYMLINKS) \
-    $(RFS_MSM_SLPI_SYMLINKS) \
-    $(RFS_MSM_WPSS_SYMLINKS) \
-    $(WIFI_FIRMWARE_SYMLINKS)
-
+# These files are produced by the complete kernel build before image packaging.
+$(filter-out $(KERNEL_MODULES_OUT)/qca_cld3_wlan.ko,$(BOARD_VENDOR_KERNEL_MODULES)): $(PRODUCT_OUT)/kernel
 endif
