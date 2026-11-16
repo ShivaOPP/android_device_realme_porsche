@@ -4,7 +4,9 @@
     "manifest_branch": "calcite",
     "android_tag": "android-17.0.0_r1",
     "lunch": "aospa_porsche-userdebug",
-    "product": "vendor/aospa/products/porsche/aospa_porsche.mk"
+    "product": "vendor/aospa/products/porsche/aospa_porsche.mk",
+    "release": "cp2a",
+    "confirmed_platform_version": "17"
   },
   "primary": [
     {
@@ -118,6 +120,27 @@
       "commit": "64b5ade361daa23f2b1299adb587183722aaaf30",
       "branch": "a17-port",
       "shallow": false
+    },
+    {
+      "path": "hardware/google/pixel",
+      "origin": "https://github.com/LineageOS/android_hardware_google_pixel",
+      "commit": "84e9844c5ff1ef61d6b9e93a2dc9a978d4005daa",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/qcom-caf/common",
+      "origin": "https://github.com/LineageOS/android_hardware_qcom-caf_common",
+      "commit": "5cd53603d36aaddd9ba9d882dad5411f1b30fbed",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "vendor/qcom/opensource/thermal-hal",
+      "origin": "https://github.com/AOSPA/android_hardware_qcom_thermal",
+      "commit": "339ecff03f7509351035c6d33cef2b5768c86f6d",
+      "branch": "a17-port",
+      "shallow": false
     }
   ],
   "preserved_references": [
@@ -169,6 +192,14 @@
       "commit": "311f22ac6f16875c48c3fc45c0becb911fbf4bb3",
       "branch": "uvite",
       "shallow": false
+    },
+    {
+      "path": "device/realme/porsche-a17-ref",
+      "origin": "https://github.com/PixelOS-Devices/android_device_realme_porsche",
+      "commit": "f254c9cd94d03ae9214857564cca9f37f09b706c",
+      "branch": "seventeen",
+      "shallow": false
     }
-  ]
+  ],
+  "note": "Commits in this file identify inspected upstream baselines, not final local port commits. Local modifications are recorded on a17-port in each repository."
 }

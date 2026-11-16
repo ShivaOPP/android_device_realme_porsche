@@ -1,15 +1,16 @@
 #
-# Copyright (C) 2023 Paranoid Android
+# Copyright (C) 2021-2025 The LineageOS Project
+#
 # SPDX-License-Identifier: Apache-2.0
 #
 
 DEVICE_PATH := device/realme/porsche
-SM8350_FSTAB_MODULE := fstab.porsche
-$(call inherit-product, device/oneplus/sm8350-common/common.mk)
 LOCAL_PATH := $(DEVICE_PATH)
+SM8350_FSTAB_MODULE := fstab.porsche
 
-# Product registration and vendor/aospa inheritance belong to
-# vendor/aospa/products/porsche/aospa_porsche.mk on calcite.
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -22,52 +23,21 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_platform_info.xml \
     $(DEVICE_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_platform_info.xml
 
-PRODUCT_PACKAGES += \
-    libstdc++_vendor
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
-# Display
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/display/display_id_4630946728207028354.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946728207028354.xml
-
-# Fingerprint overlay behaviour and Porsche init are retained from uvite.
-TARGET_USES_FOD_ZPOS := true
-PRODUCT_PACKAGES += \
-    init.porsche.rc \
-    init.porsche.perf.rc \
-    ueventd.porsche.rc
-
-# Overlays
-PRODUCT_PACKAGES += \
-    AOSPAPorscheFrameworks \
-    AOSPAPorscheSystemUI \
-    PorscheCarrierConfig \
-    PorscheFrameworks \
-    PorscheNfc \
-    PorscheSettings \
-    PorscheSettingsProvider \
-    PorscheSystemUI \
-    PorscheWifiResTarget \
-    PorscheWifiResTargetMainline
-
-# Porsche IRQ affinity, thermals and WLAN tuning.
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/perf/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
-    $(DEVICE_PATH)/configs/thermal/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
-    $(DEVICE_PATH)/configs/wlan/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-# Keep the AOSPA gesture extension while using the new Oplus sensor/vibrator HALs.
-PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
-$(call inherit-product, vendor/realme/porsche/porsche-vendor.mk)
-
-# Verified Porsche declarations from the matching Android 17 device reference.
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest_porsche.xml
+# Camera
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/camera/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
-$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/oplus_chg/battery/mmi_charging_enable)
-$(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,INCLUDE_DIR,$(DEVICE_PATH)/touch/include)
-$(call soong_config_set_bool,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
 
-# Use calcite hardware/nxp/nfc AIDL HAL; the old QTI Nfc apps path is gone.
+# Display
+PRODUCT_SYSTEM_PROPERTIES += \
+    sys.brightness.disable_gamma_conversion=true
+
+# Lineage Health
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/oplus_chg/battery/mmi_charging_enable)
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
@@ -85,3 +55,38 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-custom
+
+PRODUCT_PACKAGES += \
+    OPlusFrameworksResTarget \
+    OPlusSettingsProviderResTarget \
+    OPlusSettingsResTarget \
+    OPlusSystemUIResTarget \
+    TargetWifiOverlay
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
+# Touch
+$(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,INCLUDE_DIR,$(LOCAL_PATH)/touch/include)
+
+# Vibrator
+$(call soong_config_set_bool,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
+
+# Inherit from the common OEM chipset makefile.
+$(call inherit-product, device/oneplus/sm8350-common/common.mk)
+
+# The new common tree owns init, sensors, thermals, IRQ balancing and WLAN
+# configuration. Keep the uvite copies as references, without installing them.
+# AOSPA-specific resources and gesture support are retained from the uvite tree.
+PRODUCT_PACKAGES += \
+    AOSPAPorscheFrameworks \
+    AOSPAPorscheSystemUI
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest_porsche.xml
+
+# Inherit from the proprietary files makefile.
+$(call inherit-product, vendor/realme/porsche/porsche-vendor.mk)

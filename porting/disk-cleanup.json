@@ -12,5 +12,7 @@
     "git -C vendor/realme-a14-ref sparse-checkout disable",
     "git -C vendor/realme-a17-ref/porsche sparse-checkout disable"
   ],
-  "approximate_bytes_freed": 5528715264
+  "approximate_bytes_freed": 5528715264,
+  "abandoned_sync_pack_bytes_freed": 34348693445,
+  "platform_history_compaction_gib": 36.9
 }

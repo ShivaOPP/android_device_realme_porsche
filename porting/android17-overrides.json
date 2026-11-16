@@ -44,5 +44,15 @@
   "needs_device_confirmation": [
     "128 GB userdata image size; OTA does not contain userdata",
     "ro.boot.prjname is not hardcoded; retain the bootloader-supplied value"
-  ]
+  ],
+  "active_device_properties": "Exact seventeen porsche vendor.prop; other partition properties come from A17 common",
+  "active_device_overlays": "Five seventeen device overlays plus AOSPA-specific framework and SystemUI overlays",
+  "configuration_ownership": {
+    "irqbalance": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/msm_irqbalance.conf",
+    "thermal": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/thermal-engine.conf",
+    "wifi": "vendor/realme/porsche/proprietary/odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
+    "init": "device/oneplus/sm8350-common/init",
+    "dolby": "hardware/dolby, seventeen-hidl",
+    "manifest_fragments": "A17 common + new Dolby + A17 porsche eSE declarations"
+  }
 }

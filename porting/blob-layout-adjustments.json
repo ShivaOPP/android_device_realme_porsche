@@ -4,5 +4,5 @@
     "    vendor/oneplus/sm8350-common/proprietary/odm/firmware/tp/21617/FW_FT3658U_SAMSUNG_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/21617/FW_FT3658U_SAMSUNG_FAE.img \\",
     "    vendor/oneplus/sm8350-common/proprietary/odm/firmware/tp/21617/LIMIT_FT3658U_SAMSUNG.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/21617/LIMIT_FT3658U_SAMSUNG.img \\"
   ],
-  "radio_policy": "ADD_RADIO_FILES=false; new porsche blob checkout has no radio images"
+  "radio_policy": "Use A17 reference firmware packaging: all 23 tracked radio images exist and their SHA1 hashes match Android.mk."
 }

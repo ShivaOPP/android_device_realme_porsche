@@ -88,5 +88,17 @@
     "repository": "AOSPA/android_hardware_qcom_media",
     "target_path": "hardware/qcom/media",
     "revision": "calcite-888"
+  },
+  {
+    "remote": "github",
+    "repository": "LineageOS/android_hardware_qcom-caf_common",
+    "target_path": "hardware/qcom-caf/common",
+    "revision": "lineage-23.2"
+  },
+  {
+    "remote": "aospa",
+    "repository": "AOSPA/android_hardware_qcom_thermal",
+    "target_path": "vendor/qcom/opensource/thermal-hal",
+    "revision": "calcite-legacy"
   }
 ]
