@@ -6,7 +6,6 @@
 
 DEVICE_PATH := device/realme/porsche
 LOCAL_PATH := $(DEVICE_PATH)
-SM8350_FSTAB_MODULE := fstab.porsche
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -85,7 +84,8 @@ $(call inherit-product, device/oneplus/sm8350-common/common.mk)
 # AOSPA-specific resources and gesture support are retained from the uvite tree.
 PRODUCT_PACKAGES += \
     AOSPAPorscheFrameworks \
-    AOSPAPorscheSystemUI
+    AOSPAPorscheSystemUI \
+    PorscheNfc
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest_porsche.xml
 
 # Inherit from the proprietary files makefile.

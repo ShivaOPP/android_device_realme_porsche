@@ -1,0 +1,20 @@
+{
+  "obsolete_uvite_resources": {
+    "config_oemFastChargerStatusPath": {
+      "value": "/sys/class/oplus_chg/battery/voocchg_ing",
+      "replacement": "No OEM-specific status resource in calcite. BatteryStatus derives charge speed from health HAL maximum charging wattage; validate OEM charging indication at runtime."
+    },
+    "config_oemFastChargerStatusValue": {
+      "value": "1",
+      "replacement": "See config_oemFastChargerStatusPath."
+    },
+    "config_udfps_hbm_type": {
+      "value": 0,
+      "replacement": "Calcite UdfpsTouchOverlay configures its GHBM surface directly. Keep config_udfpsColor and the A17 Oplus UDFPS extension."
+    }
+  },
+  "a17_resource_renames": {
+    "shade_header_system_icons_padding_end": "hover_system_icons_container_padding_end"
+  },
+  "preserved_secure_nfc": "PorscheNfc keeps uvite SKU porsche support; bootloader SKU is preserved and needs no guessed numeric project ID."
+}

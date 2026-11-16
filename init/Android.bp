@@ -12,12 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-prebuilt_etc {
+// TODO(porsche): the verified A17 common fstab is byte-identical. Install it
+// once through fstab.default; retain this source alias for device cross-checks.
+filegroup {
     name: "fstab.porsche",
-    filename: "fstab.default",
-    src: "fstab.default",
-    vendor: true,
-    vendor_ramdisk_available: true,
+    srcs: ["fstab.default"],
 }
 
 prebuilt_etc {
@@ -44,8 +43,9 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    // TODO(porsche): active permissions come from the A17 common ueventd.rc.
     name: "ueventd.porsche.rc",
-    filename: "ueventd.rc",
+    filename: "ueventd.porsche.legacy.rc",
     src: "ueventd.porsche.rc",
     device_specific: true,
 }

@@ -8,11 +8,9 @@
     <!-- UDFPS Color -->
     <color name="config_udfpsColor">#ffffe6</color>
 
-    <!-- HBM type of UDFPS overlay.
-            0 - GLOBAL HBM 
-            1 - LOCAL HBM
-    -->
-    <integer name="config_udfps_hbm_type">0</integer>
+    <!-- TODO(porsche): calcite's UdfpsTouchOverlay directly uses the GHBM
+         surface; config_udfps_hbm_type no longer exists. Keep the Porsche
+         illumination color and the A17 Oplus SurfaceFlinger extension. -->
 
     <!-- Doze: does the single tap sensor need a proximity check? -->
     <bool name="doze_single_tap_proximity_check">true</bool>

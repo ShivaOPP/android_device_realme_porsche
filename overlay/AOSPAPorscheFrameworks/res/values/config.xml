@@ -42,10 +42,9 @@
     <!-- Whether to intercept inputs on screen off. -->
     <bool name="config_enableKeyHandler">true</bool>
 
-    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
-    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/oplus_chg/battery/voocchg_ing</string>
-
-    <!-- Expected value from fast charging status file  -->
-    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
+    <!-- TODO(porsche): calcite removed config_oemFastChargerStatusPath/Value.
+         The original values are retained in porting/resource-migrations.json.
+         BatteryStatus now derives charge speed from the health HAL's reported
+         maximum charging wattage; OEM-specific status needs runtime validation. -->
 
 </resources>
