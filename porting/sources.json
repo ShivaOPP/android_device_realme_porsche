@@ -141,6 +141,13 @@
       "commit": "339ecff03f7509351035c6d33cef2b5768c86f6d",
       "branch": "a17-port",
       "shallow": false
+    },
+    {
+      "path": "hardware/oplus/packages/EuiccPolicy",
+      "origin": "https://github.com/LineageOS/android_packages_apps_EuiccPolicy",
+      "commit": "7232f94f1a908272d4b72bf13277a54c889f9f2c",
+      "branch": "a17-port",
+      "shallow": false
     }
   ],
   "preserved_references": [

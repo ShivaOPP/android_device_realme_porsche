@@ -100,5 +100,11 @@
     "repository": "AOSPA/android_hardware_qcom_thermal",
     "target_path": "vendor/qcom/opensource/thermal-hal",
     "revision": "calcite-legacy"
+  },
+  {
+    "remote": "github",
+    "repository": "LineageOS/android_packages_apps_EuiccPolicy",
+    "target_path": "hardware/oplus/packages/EuiccPolicy",
+    "revision": "lineage-23.2"
   }
 ]
