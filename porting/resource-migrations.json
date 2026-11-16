@@ -16,5 +16,10 @@
   "a17_resource_renames": {
     "shade_header_system_icons_padding_end": "hover_system_icons_container_padding_end"
   },
-  "preserved_secure_nfc": "PorscheNfc enables the current device-only enable_secure_nfc_support resource. Keep the original porsche SKU list for history, and preserve any bootloader SKU without a guessed mapping."
+  "preserved_secure_nfc": "PorscheNfc enables the current device-only enable_secure_nfc_support resource. Keep the original porsche SKU list for history, and preserve any bootloader SKU without a guessed mapping.",
+  "input_gestures": {
+    "reference": "PixelOS TouchGestures/KeyHandler APK classloader entries",
+    "calcite": "Native PhoneWindowManager KeyHandler, config_enableKeyHandler=true, vendor.aospa.power-service plus Porsche feature extension",
+    "verification": "Existing gesture bit indices match the selected A17 kernel touchpanel_common.h; no missing APK class is loaded."
+  }
 }
