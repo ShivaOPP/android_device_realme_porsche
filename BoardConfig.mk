@@ -19,7 +19,7 @@ BOARD_SUPER_PARTITION_SIZE := 11190403072
 # The uvite value reserved 4,000,000 bytes; use the verified A17 value.
 BOARD_ONEPLUS_DYNAMIC_PARTITIONS_SIZE := 11186208768
 
-# Both bases use boot header v3, DTB in boot and a separate DTBO image.
+# Boot header v3 puts the DTB in vendor_boot; DTBO remains a separate image.
 KERNEL_DEFCONFIG := vendor/lahaina-qgki_defconfig
 TARGET_KERNEL_CONFIG := $(KERNEL_DEFCONFIG)
 # TODO(porsche): uvite required an external clang-standalone checkout. Use the
@@ -33,6 +33,10 @@ KERNEL_FULL_LLVM := true
 KERNEL_MODULES_OUT := $(PRODUCT_OUT)/obj/PORSCHE_KERNEL_MODULES
 BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(KERNEL_MODULES_OUT)/,$(strip $(shell cat device/oneplus/sm8350-common/kernel-modules.list)))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_MODULES_OUT)/,$(BOOT_KERNEL_MODULES))
+
+# TODO(porsche): calcite's legacy QTI AndroidBoardCommon.mk also creates these
+# mountpoints. Keep its rules and let the Soong mkdir adapter share them.
+QCOM_LEGACY_VENDOR_MOUNTPOINT_NAMES := firmware_mnt bt_firmware dsp soccp_firmware dcp_firmware
 
 # AOSPA hooks are still consumed by calcite's BoardConfigSoong.mk.
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_porsche
