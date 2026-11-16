@@ -1,3 +1,4 @@
+# TODO(porsche): identical overlapping wakeup labels are owned by calcite lahaina policy.
 # Charging
 # Shared label for genfscon proc /wireless is provided by hardware/oplus/sepolicy/qti/vendor/genfs_contexts.
 # Shared label for genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply is provided by hardware/oplus/sepolicy/qti/vendor/genfs_contexts.
@@ -34,6 +35,3 @@ genfscon sysfs /devices/virtual/oplus_chg/battery/voocchg_ing          u:object_
 # Shared label for genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,wireless-charge/wakeup is provided by hardware/oplus/sepolicy/qti/vendor/genfs_contexts.
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-7/7-0028/wakeup u:object_r:sysfs_wakeup:s0
 # Shared label for genfscon sysfs /devices/platform/soc/990000.i2c/i2c-5/5-004b/wakeup is provided by hardware/oplus/sepolicy/qti/vendor/genfs_contexts.
-genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys10/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0

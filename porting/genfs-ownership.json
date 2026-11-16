@@ -1,0 +1,78 @@
+[
+  {
+    "key": [
+      "sysfs",
+      "/devices/platform/soc/aab0000.qcom,venus/subsys10/wakeup"
+    ],
+    "entries": [
+      {
+        "source": "device/qcom/common/sepolicy/generic/vendor/lahaina/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys10/wakeup u:object_r:sysfs_wakeup:s0"
+      },
+      {
+        "source": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys10/wakeup u:object_r:sysfs_wakeup:s0"
+      }
+    ],
+    "resolution": "Keep identical calcite platform label; remove duplicate extension declaration."
+  },
+  {
+    "key": [
+      "sysfs",
+      "/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/wakeup"
+    ],
+    "entries": [
+      {
+        "source": "device/qcom/common/sepolicy/generic/vendor/lahaina/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/wakeup u:object_r:sysfs_wakeup:s0"
+      },
+      {
+        "source": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/wakeup u:object_r:sysfs_wakeup:s0"
+      }
+    ],
+    "resolution": "Keep identical calcite platform label; remove duplicate extension declaration."
+  },
+  {
+    "key": [
+      "sysfs",
+      "/devices/platform/soc/soc:qcom,spcom/wakeup"
+    ],
+    "entries": [
+      {
+        "source": "device/qcom/common/sepolicy/generic/vendor/lahaina/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0"
+      },
+      {
+        "source": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0"
+      }
+    ],
+    "resolution": "Keep identical calcite platform label; remove duplicate extension declaration."
+  },
+  {
+    "key": [
+      "sysfs",
+      "/devices/platform/soc/884000.i2c/i2c-5/5-0028/wakeup"
+    ],
+    "entries": [
+      {
+        "source": "device/qcom/common/sepolicy/generic/vendor/lahaina/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/884000.i2c/i2c-5/5-0028/wakeup u:object_r:sysfs_wakeup:s0"
+      },
+      {
+        "source": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+        "label": "u:object_r:sysfs_wakeup:s0",
+        "entry": "genfscon sysfs /devices/platform/soc/884000.i2c/i2c-5/5-0028/wakeup u:object_r:sysfs_wakeup:s0"
+      }
+    ],
+    "resolution": "Keep identical calcite platform label; remove duplicate extension declaration."
+  }
+]
