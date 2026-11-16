@@ -90,3 +90,8 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest_porsche.xml
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/realme/porsche/porsche-vendor.mk)
+
+# TODO(porsche): calcite owns vendor.qti.hardware.fm@1.0 for both framework
+# and vendor. Use that interface glue once; keep the A17 prebuilt as the
+# porsche_vendor_fm_blob filegroup for ABI comparison. FM service is unchanged.
+PRODUCT_PACKAGES += vendor.qti.hardware.fm@1.0.vendor

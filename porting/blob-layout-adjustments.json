@@ -4,5 +4,11 @@
     "    vendor/oneplus/sm8350-common/proprietary/odm/firmware/tp/21617/FW_FT3658U_SAMSUNG_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/21617/FW_FT3658U_SAMSUNG_FAE.img \\",
     "    vendor/oneplus/sm8350-common/proprietary/odm/firmware/tp/21617/LIMIT_FT3658U_SAMSUNG.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/21617/LIMIT_FT3658U_SAMSUNG.img \\"
   ],
-  "radio_policy": "Use A17 reference firmware packaging: all 23 tracked radio images exist and their SHA1 hashes match Android.mk."
+  "radio_policy": "Use A17 reference firmware packaging: all 23 tracked radio images exist and their SHA1 hashes match Android.mk.",
+  "fm_interface": {
+    "installed": "AOSPA vendor.qti.hardware.fm@1.0.vendor source interface",
+    "preserved_prebuilt": "vendor/oneplus/sm8350-common:porsche_vendor_fm_blob",
+    "reason": "The source HIDL interface generates vendor and framework variants; a second prebuilt at vendor/lib64/vendor.qti.hardware.fm@1.0.so causes duplicate image rules. Keep the A17 FM service and resolve its unchanged DT_NEEDED name to AOSPA interface glue.",
+    "todo": "Compile the interface and run the FM service ELF check to verify symbol closure."
+  }
 }

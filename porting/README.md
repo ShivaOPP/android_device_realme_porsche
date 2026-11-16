@@ -138,6 +138,10 @@ a flashable candidate. In particular:
   OEM fast-charge status resource has no calcite equivalent; battery speed is
   calculated from health HAL wattage. Keep this runtime indication on the list
   for validation. Secure NFC uses the current device capability resource.
+- Calcite already generates the FM HIDL interface in framework and vendor
+  variants. Keep the A17 FM service, bind its unchanged dependency name to that
+  source interface, and retain the duplicate A17 interface blob in a filegroup
+  for ABI comparison. Its ELF symbol closure still needs a build check.
 - Compile the retained AOSPA overlays against calcite resources and validate
   fingerprint brightness/press behavior, charging, suspend and Dolby service
   compatibility during eventual runtime testing.

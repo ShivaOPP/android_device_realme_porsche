@@ -54,5 +54,11 @@
     "init": "device/oneplus/sm8350-common/init",
     "dolby": "hardware/dolby, seventeen-hidl",
     "manifest_fragments": "A17 common + new Dolby + A17 porsche eSE declarations"
+  },
+  "target_integration": {
+    "fstab_install_name": "fstab.qcom; unchanged A17 fstab content, matching verified androidboot.hardware=qcom and calcite GetFstabPath",
+    "modules": "88 compiled modules, complete A17 load lists, explicit early image inputs, WLAN filename alias retained",
+    "symlinks": "AOSPA QCOM common owns RFS; A17 common/vendor owns ACDB and WLAN links; removed racing uvite directory recipes",
+    "secure_nfc": "Use current device capability boolean without overwriting bootloader SKU"
   }
 }
