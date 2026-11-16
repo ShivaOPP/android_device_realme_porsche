@@ -5,6 +5,11 @@
 -->
 <resources>
 
+    <!-- TODO(porsche): calcite no longer invokes the old libinit SKU hook.
+         This device-only overlay preserves uvite secure NFC support through
+         the current Nfc DeviceConfigFacade resource, without guessing a SKU. -->
+    <bool name="enable_secure_nfc_support">true</bool>
+
     <string-array name="config_skuSupportsSecureNfc">
         <item>porsche</item>
     </string-array>

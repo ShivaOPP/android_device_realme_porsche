@@ -16,5 +16,5 @@
   "a17_resource_renames": {
     "shade_header_system_icons_padding_end": "hover_system_icons_container_padding_end"
   },
-  "preserved_secure_nfc": "PorscheNfc keeps uvite SKU porsche support; bootloader SKU is preserved and needs no guessed numeric project ID."
+  "preserved_secure_nfc": "PorscheNfc enables the current device-only enable_secure_nfc_support resource. Keep the original porsche SKU list for history, and preserve any bootloader SKU without a guessed mapping."
 }
