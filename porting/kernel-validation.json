@@ -38,7 +38,7 @@
     "partition_size": 25165824,
     "fits_partition": true
   },
-  "note": "Standalone DT compilation/packing test; shared ROM image recipes still need clean-build validation, and these test files are not flashed.",
+  "note": "Standalone kernel compilation and packing tests; integrated images have not yet been built or flashed.",
   "selected_config": {
     "CONFIG_ARCH_LAHAINA": "y",
     "CONFIG_QGKI": "y",
@@ -68,5 +68,7 @@
   "warnings": [
     "Clang reports a 4208-byte stack frame in oplus_get_bcc_parameters_from_adsp (warning threshold 3042 bytes).",
     "Kernel MODPOST reports static EXPORT_SYMBOL embms_tm_multicast_recv."
-  ]
+  ],
+  "generated_ninja_dtb_discovery": "Verified runtime find command, after kernel prerequisite; no source patch required",
+  "generated_ninja_dtbo_discovery": "Verified runtime find command, after kernel prerequisite; no source patch required"
 }

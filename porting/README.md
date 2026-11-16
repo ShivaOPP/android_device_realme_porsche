@@ -43,6 +43,8 @@ Verified partition geometry: super `11190403072`, dynamic group `11186208768`,
 boot and vendor_boot `201326592`, dtbo `25165824`, block size `262144` bytes.
 Boot header version is 3. Vendor, ODM and vendor_dlkm use EROFS. The dynamic
 group contains odm, product, system, system_ext, vendor and vendor_dlkm.
+The unchanged A17 fstab is installed as `fstab.qcom`, which calcite can discover
+from the verified `androidboot.hardware=qcom` command line.
 The Porsche DTS contains project 21617; the port does not invent a numeric
 mapping for the bootloader's `ro.boot.prjname`.
 
@@ -118,15 +120,16 @@ configuration variable. HIDL services are retained where the primary reference
 and proprietary interfaces require them.
 
 Remaining work is tracked by the current build log `.repo/porsche-build.log`.
-Soong graph generation has passed; Kati, userspace module compilation,
-SELinux/VINTF, integrated images and a ROM build still need to finish before this is
+`lunch aospa_porsche-userdebug` and `m nothing` have passed through Soong, Kati
+and Ninja. Userspace module compilation, SELinux/VINTF, integrated images and a
+ROM build still need to finish before this is
 a flashable candidate. In particular:
 
-- The shared kernel/image recipes evaluate DTB/DTBO file discovery while Kati
-  generates Ninja, before a clean kernel build. A fix is prepared in
-  `patches/calcite-runtime-device-trees.patch`; applying it to
-  `device/qcom/common` and `device/qcom/kernelscripts` awaits permission because
-  the original directory restriction excludes those repositories.
+- The generated Ninja rules confirm that calcite's Kati defers the DTB/DTBO
+  `find` commands until execution, after the kernel prerequisite. An earlier
+  proposed source patch was unnecessary and has been withdrawn. No shared-source
+  scope approval is required for that concern. Integrated images still need a
+  build and inspection.
 - Porsche now declares the verified complete 88-module inventory early, copies
   six recovery modules into vendor_boot, and preserves the WLAN filename alias.
   Verify these integrated image rules after Kati passes. Regenerate the inventory
