@@ -1,0 +1,16 @@
+{
+  "removed_from_reference_worktrees": [
+    "vendor/realme-a14-ref/bitra",
+    "vendor/realme-a14-ref/bladerunner",
+    "vendor/realme-a14-ref/lunaa",
+    "vendor/realme-a14-ref/sm8250-common",
+    "vendor/realme-a17-ref/porsche/proprietary"
+  ],
+  "primary_vendor_path": "vendor/realme/porsche",
+  "full_git_history_retained": true,
+  "restore_commands": [
+    "git -C vendor/realme-a14-ref sparse-checkout disable",
+    "git -C vendor/realme-a17-ref/porsche sparse-checkout disable"
+  ],
+  "approximate_bytes_freed": 5528715264
+}
