@@ -1,18 +1,18 @@
 # Camera
-type vendor_persist_camera_file, file_type;
+# Shared declaration vendor_persist_camera_file is provided by hardware/oplus/sepolicy/qti/vendor/file.te.
 
 # Charging
-type vendor_proc_wireless, fs_type, proc_type;
+# Shared declaration vendor_proc_wireless is provided by hardware/oplus/sepolicy/qti/vendor/file.te.
 
 # Display
-type vendor_proc_display, fs_type, proc_type;
+# Shared declaration vendor_proc_display is provided by hardware/oplus/sepolicy/qti/vendor/file.te.
 
 # Engineering
-type vendor_persist_engineer_file, file_type;
+# Shared declaration vendor_persist_engineer_file is provided by hardware/oplus/sepolicy/qti/public/file.te.
 
 # Fingerprint
-type vendor_persist_fingerprint_file, file_type;
-type vendor_proc_fingerprint, fs_type, proc_type;
+# Shared declaration vendor_persist_fingerprint_file is provided by hardware/oplus/sepolicy/qti/vendor/file.te.
+# Shared declaration vendor_proc_fingerprint is provided by hardware/oplus/sepolicy/qti/vendor/file.te.
 
 # Versioning
-type vendor_proc_oplus_version, fs_type, proc_type;
+# Shared declaration vendor_proc_oplus_version is provided by hardware/oplus/sepolicy/qti/vendor/file.te.

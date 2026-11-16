@@ -1,42 +1,42 @@
 # Camera
-/mnt/vendor/persist/camera(/.*)?                     u:object_r:vendor_persist_camera_file:s0
-/mnt/vendor/persist/dual_camera_calibration(/.*)?    u:object_r:vendor_persist_camera_file:s0
+# Shared label for /mnt/vendor/persist/camera(/.*)? is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
+# Shared label for /mnt/vendor/persist/dual_camera_calibration(/.*)? is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # Display
-/dev/oplus_display    u:object_r:graphics_device:s0
+# Shared label for /dev/oplus_display is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # Dolby
-/data/vendor/dolby(/.*)?                                                               u:object_r:vendor_data_file:s0
+# Shared label for /data/vendor/dolby(/.*)? is provided by hardware/dolby/sepolicy/vendor/file_contexts.
 /(vendor|system/vendor|odm)/bin/hw/vendor\.dolby_v3_6\.hardware\.dms360@2\.0-service   u:object_r:hal_dms_default_exec:s0
 
 # Engineering
-/mnt/vendor/persist/engineermode(/.*)?    u:object_r:vendor_persist_engineer_file:s0
+# Shared label for /mnt/vendor/persist/engineermode(/.*)? is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # Fingerprint
 /(odm|vendor/odm)/bin/hw/vendor\.oplus\.hardware\.biometrics\.fingerprint@2\.1-service           u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oplus    u:object_r:hal_fingerprint_default_exec:s0
-/dev/jiiov_fp                                                                                    u:object_r:fingerprint_device:s0
-/mnt/vendor/persist/fingerprint(/.*)?                                                            u:object_r:vendor_persist_fingerprint_file:s0
+# Shared label for /dev/jiiov_fp is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
+# Shared label for /mnt/vendor/persist/fingerprint(/.*)? is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # NFC
 /(odm|vendor/odm)/bin/hw/vendor\.qti\.esepowermanager@1\.1-service    u:object_r:vendor_hal_esepowermanager_qti_exec:s0
-/(odm|vendor/odm)/bin/hw/vendor\.qti\.secure_element@1\.2-service     u:object_r:hal_secure_element_default_exec:s0
+# Shared label for /(odm|vendor/odm)/bin/hw/vendor\.qti\.secure_element@1\.2-service is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # Partitions
-/dev/block/platform/soc/1d84000\.ufshc/by-name/vbmeta_vendor_[ab]      u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/engineering_cdt_[ab]    u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/oplus_sec_[ab]          u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/splash_[ab]             u:object_r:vendor_custom_ab_block_device:s0
+# Shared label for /dev/block/platform/soc/1d84000\.ufshc/by-name/vbmeta_vendor_[ab] is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
+# Shared label for /dev/block/platform/soc/1d84000\.ufshc/by-name/engineering_cdt_[ab] is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
+# Shared label for /dev/block/platform/soc/1d84000\.ufshc/by-name/oplus_sec_[ab] is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
+# Shared label for /dev/block/platform/soc/1d84000\.ufshc/by-name/splash_[ab] is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # RMT
-/dev/block/platform/soc/1d84000\.ufshc/by-name/oplusdycnvbk          u:object_r:vendor_modem_efs_partition_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/oplusstanvbk_[ab]     u:object_r:vendor_modem_efs_partition_device:s0
+# Shared label for /dev/block/platform/soc/1d84000\.ufshc/by-name/oplusdycnvbk is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
+# Shared label for /dev/block/platform/soc/1d84000\.ufshc/by-name/oplusstanvbk_[ab] is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # Reserve
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oplusreserve[1-4]    u:object_r:vendor_reserve_partition:s0
 
 # Sensors
-/(odm|vendor/odm)/bin/oplus_sensor_fb    u:object_r:vendor_sensors_exec:s0
+# Shared label for /(odm|vendor/odm)/bin/oplus_sensor_fb is provided by hardware/oplus/sepolicy/qti/vendor/file_contexts.
 
 # Touchpanel
 /proc/touchpanel/game_switch_enable                                                                                  u:object_r:vendor_proc_display:s0

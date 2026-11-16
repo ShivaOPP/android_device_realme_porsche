@@ -1,2 +1,3 @@
+# Porsche-only values not supplied by the booting Android 17 base.
 # Recovery
 ro.recovery.ui.margin_height=103

@@ -1,5 +1,5 @@
 # Fingerprint
-vendor_internal_prop(system_fingerprint_prop)
+# Shared declaration system_fingerprint_prop is provided by hardware/oplus/sepolicy/qti/public/property.te.
 
 # Version
-system_vendor_config_prop(system_oplus_project_prop)
+# Shared declaration system_oplus_project_prop is provided by hardware/oplus/sepolicy/qti/public/property.te.

@@ -1,2 +1,2 @@
 # Fingerprint
-vendor_internal_prop(vendor_fingerprint_prop)
+# Shared declaration vendor_fingerprint_prop is provided by hardware/oplus/sepolicy/qti/vendor/property.te.

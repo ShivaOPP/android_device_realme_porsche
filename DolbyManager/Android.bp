@@ -1,3 +1,6 @@
+// TODO(porsche): preserved uvite implementation; hardware/dolby owns the active app.
+soong_namespace {}
+
 //
 // Copyright (C) 2017-2021 The LineageOS Project
 //           (C) 2023 Paranoid Android

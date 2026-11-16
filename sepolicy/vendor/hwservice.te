@@ -1,8 +1,8 @@
 # Dolby
-type hal_dms_hwservice, hwservice_manager_type;
+# Shared declaration hal_dms_hwservice is provided by hardware/dolby/sepolicy/vendor/hwservice.te.
 
 # ORMS
-type vendor_hal_orms_hwservice, hwservice_manager_type, protected_hwservice;
+# Shared declaration vendor_hal_orms_hwservice is provided by hardware/oplus/sepolicy/qti/vendor/hwservice.te.
 
 # Osense
-type vendor_hal_osense_hwservice, hwservice_manager_type, protected_hwservice;
+# Shared declaration vendor_hal_osense_hwservice is provided by hardware/oplus/sepolicy/qti/vendor/hwservice.te.

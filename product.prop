@@ -1,5 +1,2 @@
+# Porsche-only values not supplied by the booting Android 17 base.
 # Audio
-audio.deep_buffer.media=true
-audio.offload.min.duration.secs=30
-audio.offload.video=true
-ro.af.client_heap_size_kbyte=7168

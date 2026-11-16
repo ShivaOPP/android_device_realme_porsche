@@ -1,18 +1,18 @@
 # Camera
-vendor.oplus.hardware.cameraextension::ICameraExtensionService         u:object_r:vendor_hal_camera_extension_hwservice:s0
-vendor.oplus.hardware.cammidasservice::IMIDASService    u:object_r:hal_camera_hwservice:s0
+# Shared label for vendor.oplus.hardware.cameraextension::ICameraExtensionService is provided by hardware/oplus/sepolicy/qti/vendor/hwservice_contexts.
+# Shared label for vendor.oplus.hardware.cammidasservice::IMIDASService is provided by hardware/oplus/sepolicy/qti/vendor/hwservice_contexts.
 
 # Dolby
 vendor.dolby_v3_6.hardware.dms360::IDms                               u:object_r:hal_dms_hwservice:s0
 
 # Fingerprint
-vendor.oplus.hardware.biometrics.fingerprint::IBiometricsFingerprint    u:object_r:hal_fingerprint_hwservice:s0
-vendor.oplus.hardware.commondcs::ICommonDcsHalService                   u:object_r:hal_fingerprint_hwservice:s0
+# Shared label for vendor.oplus.hardware.biometrics.fingerprint::IBiometricsFingerprint is provided by hardware/oplus/sepolicy/qti/vendor/hwservice_contexts.
+# Shared label for vendor.oplus.hardware.commondcs::ICommonDcsHalService is provided by hardware/oplus/sepolicy/qti/vendor/hwservice_contexts.
 vendor.oplus.hardware.osense.client::IOsenseAidlHalReporter             u:object_r:hal_fingerprint_hwservice:s0
 vendor.oplus.hardware.performance::IPerformance                         u:object_r:hal_fingerprint_hwservice:s0
 
 # ORMS
-vendor.oplus.hardware.orms::IOrmsHalProxy    u:object_r:vendor_hal_orms_hwservice:s0
+# Shared label for vendor.oplus.hardware.orms::IOrmsHalProxy is provided by hardware/oplus/sepolicy/qti/vendor/hwservice_contexts.
 
 # Osense
-vendor.oplus.hardware.osense.client::IOsenseHalReporter                 u:object_r:vendor_hal_osense_hwservice:s0
+# Shared label for vendor.oplus.hardware.osense.client::IOsenseHalReporter is provided by hardware/oplus/sepolicy/qti/vendor/hwservice_contexts.

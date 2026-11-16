@@ -1,0 +1,48 @@
+{
+  "source": "device/realme/porsche-a17-ref and device/oneplus/sm8350-common, seventeen",
+  "property_conflicts": [
+    {
+      "file": "odm.prop",
+      "key": "persist.vendor.audio.spv4.enable",
+      "uvite": "false",
+      "android17": "true"
+    },
+    {
+      "file": "odm.prop",
+      "key": "persist.vendor.audio.vbat.enabled",
+      "uvite": "false",
+      "android17": "true"
+    },
+    {
+      "file": "vendor.prop",
+      "key": "ro.surface_flinger.set_idle_timer_ms",
+      "uvite": "500",
+      "android17": "4000"
+    },
+    {
+      "file": "vendor.prop",
+      "key": "ro.surface_flinger.set_touch_timer_ms",
+      "uvite": "800",
+      "android17": "4000"
+    },
+    {
+      "file": "vendor.prop",
+      "key": "ro.vendor.dolby.dax.version",
+      "uvite": "DAX3_3.6.0.12_r1",
+      "android17": "DAX3_3.7.0.8_r1"
+    }
+  ],
+  "verified_values": {
+    "model": "RMX3312",
+    "screen_density": 450,
+    "super_size": 11190403072,
+    "dynamic_group_size": 11186208768,
+    "flash_block_size": 262144,
+    "boot_header_version": 3,
+    "vendor_and_odm_filesystem": "erofs"
+  },
+  "needs_device_confirmation": [
+    "128 GB userdata image size; OTA does not contain userdata",
+    "ro.boot.prjname is not hardcoded; retain the bootloader-supplied value"
+  ]
+}

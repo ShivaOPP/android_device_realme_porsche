@@ -1,0 +1,5 @@
+vendor/aospa/vendorsetup.sh
+vendor/google/gms/vendorsetup.sh
+vendor/oplus/camera/vendorsetup.sh
+vendor/qcom/opensource/core-utils/vendorsetup.sh
+vendor/qcom/sdclang/config/vendorsetup.sh

@@ -1,6 +1,6 @@
 # Display
-vendor.dps.dump.composerpid    u:object_r:vendor_display_prop:s0
+# Shared label for vendor.dps.dump.composerpid is provided by hardware/oplus/sepolicy/qti/vendor/property_contexts.
 
 # Fingerprint
-persist.vendor.fingerprint.    u:object_r:vendor_fingerprint_prop:s0
-vendor.fingerprint.            u:object_r:vendor_fingerprint_prop:s0
+# Shared label for persist.vendor.fingerprint. is provided by hardware/oplus/sepolicy/qti/vendor/property_contexts.
+# Shared label for vendor.fingerprint. is provided by hardware/oplus/sepolicy/qti/vendor/property_contexts.

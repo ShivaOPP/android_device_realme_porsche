@@ -13,9 +13,11 @@
 // limitations under the License.
 
 prebuilt_etc {
-    name: "fstab.default",
+    name: "fstab.porsche",
+    filename: "fstab.default",
     src: "fstab.default",
     vendor: true,
+    vendor_ramdisk_available: true,
 }
 
 prebuilt_etc {
@@ -33,7 +35,9 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.target.rc",
+    // The new common tree owns init.target.rc; preserve this legacy module separately.
+    name: "init.target.porsche.legacy.rc",
+    filename: "init.target.porsche.legacy.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",
     vendor: true,

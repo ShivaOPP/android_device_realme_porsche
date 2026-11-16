@@ -1,5 +1,5 @@
 # Fingerprint
-type fingerprint_device, dev_type;
+# Shared declaration fingerprint_device is provided by hardware/oplus/sepolicy/qti/vendor/device.te.
 
 # Reserve
-type vendor_reserve_partition, dev_type;
+# Shared declaration vendor_reserve_partition is provided by hardware/oplus/sepolicy/qti/vendor/device.te.

@@ -1,0 +1,399 @@
+[
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "oplus.fingerprint.         u:object_r:system_fingerprint_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "oplus.fingerprint.                                 u:object_r:system_fingerprint_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "gf.debug.dump_data         u:object_r:system_fingerprint_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "gf.debug.dump_data                                 u:object_r:system_fingerprint_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "persist.sys.assert.panic            u:object_r:exported_system_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "persist.sys.assert.panic        u:object_r:exported_system_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "persist.sys.log.ae                  u:object_r:exported_system_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "persist.sys.log.ae              u:object_r:exported_system_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "persist.sys.log.af                  u:object_r:exported_system_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "persist.sys.log.af              u:object_r:exported_system_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "persist.sys.log.awb                 u:object_r:exported_system_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "persist.sys.log.awb             u:object_r:exported_system_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/private/property_contexts",
+    "old": "ro.separate.soft    u:object_r:system_oplus_project_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/private/property_contexts",
+    "new": "ro.separate.soft                 u:object_r:system_oplus_project_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/public/property.te",
+    "old": "vendor_internal_prop(system_fingerprint_prop)",
+    "owner": "hardware/oplus/sepolicy/qti/public/property.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/public/property.te",
+    "old": "system_vendor_config_prop(system_oplus_project_prop)",
+    "owner": "hardware/oplus/sepolicy/qti/public/property.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/device.te",
+    "old": "type fingerprint_device, dev_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/device.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/device.te",
+    "old": "type vendor_reserve_partition, dev_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/device.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_persist_camera_file, file_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_proc_wireless, fs_type, proc_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_proc_display, fs_type, proc_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_persist_engineer_file, file_type;",
+    "owner": "hardware/oplus/sepolicy/qti/public/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_persist_fingerprint_file, file_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_proc_fingerprint, fs_type, proc_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file.te",
+    "old": "type vendor_proc_oplus_version, fs_type, proc_type;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hal_dms_default.te",
+    "old": "type hal_dms_default, domain;",
+    "owner": "hardware/dolby/sepolicy/vendor/hal_dms_default.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hal_dms_default.te",
+    "old": "type hal_dms_default_exec, exec_type, vendor_file_type, file_type;",
+    "owner": "hardware/dolby/sepolicy/vendor/hal_dms_default.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/mnt/vendor/persist/camera(/.*)?                     u:object_r:vendor_persist_camera_file:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/mnt/vendor/persist/camera(/.*)?                                                u:object_r:vendor_persist_camera_file:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/mnt/vendor/persist/dual_camera_calibration(/.*)?    u:object_r:vendor_persist_camera_file:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/mnt/vendor/persist/dual_camera_calibration(/.*)?                               u:object_r:vendor_persist_camera_file:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/oplus_display    u:object_r:graphics_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/oplus_display                                                  u:object_r:graphics_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/data/vendor/dolby(/.*)?                                                               u:object_r:vendor_data_file:s0",
+    "owner": "hardware/dolby/sepolicy/vendor/file_contexts",
+    "new": "/data/vendor/dolby(/.*)?   u:object_r:vendor_data_file:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/mnt/vendor/persist/engineermode(/.*)?    u:object_r:vendor_persist_engineer_file:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/mnt/vendor/persist/engineermode(/.*)?    u:object_r:vendor_persist_engineer_file:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/jiiov_fp                                                                                    u:object_r:fingerprint_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/jiiov_fp                                                                                    u:object_r:fingerprint_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/mnt/vendor/persist/fingerprint(/.*)?                                                            u:object_r:vendor_persist_fingerprint_file:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/mnt/vendor/persist/fingerprint(/.*)?                                                            u:object_r:vendor_persist_fingerprint_file:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/(odm|vendor/odm)/bin/hw/vendor\\.qti\\.secure_element@1\\.2-service     u:object_r:hal_secure_element_default_exec:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/(odm|vendor/odm)/bin/hw/vendor\\.qti\\.secure_element@1\\.2-service                 u:object_r:hal_secure_element_default_exec:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/vbmeta_vendor_[ab]      u:object_r:vendor_custom_ab_block_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/vbmeta_vendor_[ab]      u:object_r:vendor_custom_ab_block_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/engineering_cdt_[ab]    u:object_r:vendor_custom_ab_block_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/engineering_cdt_[ab]    u:object_r:vendor_custom_ab_block_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/oplus_sec_[ab]          u:object_r:vendor_custom_ab_block_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/oplus_sec_[ab]          u:object_r:vendor_custom_ab_block_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/splash_[ab]             u:object_r:vendor_custom_ab_block_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/splash_[ab]             u:object_r:vendor_custom_ab_block_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/oplusdycnvbk          u:object_r:vendor_modem_efs_partition_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/oplusdycnvbk         u:object_r:vendor_modem_efs_partition_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/oplusstanvbk_[ab]     u:object_r:vendor_modem_efs_partition_device:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/dev/block/platform/soc/1d84000\\.ufshc/by-name/oplusstanvbk_[ab]    u:object_r:vendor_modem_efs_partition_device:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/file_contexts",
+    "old": "/(odm|vendor/odm)/bin/oplus_sensor_fb    u:object_r:vendor_sensors_exec:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/file_contexts",
+    "new": "/(odm|vendor/odm)/bin/oplus_sensor_fb                                         u:object_r:vendor_sensors_exec:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/property.te",
+    "old": "vendor_internal_prop(vendor_fingerprint_prop)",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/property.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon proc /wireless                                                u:object_r:vendor_proc_wireless:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon proc /wireless                                                   u:object_r:vendor_proc_wireless:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply    u:object_r:vendor_sysfs_usb_supply:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply       u:object_r:vendor_sysfs_usb_supply:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg      u:object_r:vendor_sysfs_usb_supply:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg         u:object_r:vendor_sysfs_usb_supply:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/virtual/oplus_chg                              u:object_r:vendor_sysfs_usb_supply:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/virtual/oplus_chg                                 u:object_r:vendor_sysfs_usb_supply:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon proc /devinfo/lcd              u:object_r:vendor_proc_display:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon proc /devinfo/lcd              u:object_r:vendor_proc_display:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon proc /touchpanel               u:object_r:vendor_proc_display:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon proc /touchpanel               u:object_r:vendor_proc_display:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /kernel/oplus_display    u:object_r:vendor_sysfs_graphics:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /kernel/oplus_display    u:object_r:vendor_sysfs_graphics:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon proc /fp_id    u:object_r:vendor_proc_fingerprint:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon proc /fp_id    u:object_r:vendor_proc_fingerprint:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon proc /oplusVersion    u:object_r:vendor_proc_oplus_version:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon proc /oplusVersion    u:object_r:vendor_proc_oplus_version:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-6/6-005a/leds/vibrator    u:object_r:sysfs_vibrator:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-6/6-005a/leds/vibrator    u:object_r:sysfs_vibrator:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_gki/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg/ac/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg/ac/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg/battery/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg/battery/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg/usb/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/oplus_chg/usb/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,common-charge/oplus_chg/common/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,common-charge/oplus_chg/common/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,wireless-charge/oplus_chg/wireless/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,wireless-charge/oplus_chg/wireless/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,wireless-charge/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/soc:oplus,chg_intf/soc:oplus,chg_intf:oplus,wireless-charge/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/genfs_contexts",
+    "old": "genfscon sysfs /devices/platform/soc/990000.i2c/i2c-5/5-004b/wakeup u:object_r:sysfs_wakeup:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/genfs_contexts",
+    "new": "genfscon sysfs /devices/platform/soc/990000.i2c/i2c-5/5-004b/wakeup u:object_r:sysfs_wakeup:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/property_contexts",
+    "old": "vendor.dps.dump.composerpid    u:object_r:vendor_display_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/property_contexts",
+    "new": "vendor.dps.dump.composerpid    u:object_r:vendor_display_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/property_contexts",
+    "old": "persist.vendor.fingerprint.    u:object_r:vendor_fingerprint_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/property_contexts",
+    "new": "persist.vendor.fingerprint.                    u:object_r:vendor_fingerprint_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/property_contexts",
+    "old": "vendor.fingerprint.            u:object_r:vendor_fingerprint_prop:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/property_contexts",
+    "new": "vendor.fingerprint.                            u:object_r:vendor_fingerprint_prop:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice_contexts",
+    "old": "vendor.oplus.hardware.cameraextension::ICameraExtensionService         u:object_r:vendor_hal_camera_extension_hwservice:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice_contexts",
+    "new": "vendor.oplus.hardware.cameraextension::ICameraExtensionService         u:object_r:vendor_hal_camera_extension_hwservice:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice_contexts",
+    "old": "vendor.oplus.hardware.cammidasservice::IMIDASService    u:object_r:hal_camera_hwservice:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice_contexts",
+    "new": "vendor.oplus.hardware.cammidasservice::IMIDASService                   u:object_r:hal_camera_hwservice:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice_contexts",
+    "old": "vendor.oplus.hardware.biometrics.fingerprint::IBiometricsFingerprint    u:object_r:hal_fingerprint_hwservice:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice_contexts",
+    "new": "vendor.oplus.hardware.biometrics.fingerprint::IBiometricsFingerprint    u:object_r:hal_fingerprint_hwservice:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice_contexts",
+    "old": "vendor.oplus.hardware.commondcs::ICommonDcsHalService                   u:object_r:hal_fingerprint_hwservice:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice_contexts",
+    "new": "vendor.oplus.hardware.commondcs::ICommonDcsHalService    u:object_r:vendor_hal_commondcs_hwservice:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice_contexts",
+    "old": "vendor.oplus.hardware.orms::IOrmsHalProxy    u:object_r:vendor_hal_orms_hwservice:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice_contexts",
+    "new": "vendor.oplus.hardware.orms::IOrmsHalProxy    u:object_r:vendor_hal_orms_hwservice:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice_contexts",
+    "old": "vendor.oplus.hardware.osense.client::IOsenseHalReporter                 u:object_r:vendor_hal_osense_hwservice:s0",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice_contexts",
+    "new": "vendor.oplus.hardware.osense.client::IOsenseHalReporter    u:object_r:vendor_hal_osense_hwservice:s0"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice.te",
+    "old": "type hal_dms_hwservice, hwservice_manager_type;",
+    "owner": "hardware/dolby/sepolicy/vendor/hwservice.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice.te",
+    "old": "type vendor_hal_orms_hwservice, hwservice_manager_type, protected_hwservice;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice.te"
+  },
+  {
+    "file": "device/realme/porsche/sepolicy/vendor/hwservice.te",
+    "old": "type vendor_hal_osense_hwservice, hwservice_manager_type, protected_hwservice;",
+    "owner": "hardware/oplus/sepolicy/qti/vendor/hwservice.te"
+  }
+]
