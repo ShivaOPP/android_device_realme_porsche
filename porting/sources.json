@@ -1,0 +1,174 @@
+{
+  "target": {
+    "rom": "AOSPA",
+    "manifest_branch": "calcite",
+    "android_tag": "android-17.0.0_r1",
+    "lunch": "aospa_porsche-userdebug",
+    "product": "vendor/aospa/products/porsche/aospa_porsche.mk"
+  },
+  "primary": [
+    {
+      "path": "device/realme/porsche",
+      "origin": "https://github.com/AOSPA/android_device_realme_porsche",
+      "commit": "93aca6f949e2352216e3875f899b8e1b84446008",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "device/oneplus/sm8350-common",
+      "origin": "https://github.com/PixelOS-Devices/android_device_oneplus_sm8350-common",
+      "commit": "d82d9df2ee14f18f2f97c73f87ad05b8364a3c11",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "vendor/aospa",
+      "origin": "https://github.com/AOSPA/android_vendor_aospa",
+      "commit": "519bf66a7a393a98a2a1adbec559833ae86e9cef",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "vendor/realme/porsche",
+      "origin": "https://gitlab.com/NoPrincessHere/proprietary_vendor_realme_porsche",
+      "commit": "0e4b3d23e4326283694576ffed0f80525b3a7b07",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "vendor/oneplus/sm8350-common",
+      "origin": "https://gitlab.com/NoPrincessHere/proprietary_vendor_oneplus_sm8350-common",
+      "commit": "bd5dc7326616db222794f75502e5ca53409877fe",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "vendor/oplus/camera",
+      "origin": "https://gitlab.com/NoPrincessHere/proprietary_vendor_oplus_camera",
+      "commit": "18f356f6d1958cb8a53d1ad59d88068cb08cd904",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/oplus",
+      "origin": "https://github.com/PixelOS-AOSP/android_hardware_oplus",
+      "commit": "ff49635b78dbfa43008a3a5ffe428bde494d065f",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/dolby",
+      "origin": "https://gitlab.com/PixelOS-AOSP/android_hardware_dolby",
+      "commit": "73098f1ef375b42ccae1141ea0ec1f0515695425",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/pixelworks/interfaces",
+      "origin": "https://github.com/LineageOS/android_hardware_pixelworks_interfaces",
+      "commit": "462ccb7db689de0a92cafdde5efb3c81fa617448",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "kernel/oneplus/sm8350",
+      "origin": "https://github.com/PixelOS-Devices/android_kernel_oneplus_sm8350",
+      "commit": "de236545b87104877131cf5dd7717760231bf556",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/lineage/interfaces",
+      "origin": "https://github.com/LineageOS/android_hardware_lineage_interfaces",
+      "commit": "805d25348106e8cc6f378c0b153789f3cf8da667",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "device/lineage/sepolicy",
+      "origin": "https://github.com/LineageOS/android_device_lineage_sepolicy",
+      "commit": "96a7247e48d7e2e7127c2f090665e856de63247c",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "vendor/qcom/opensource/audio-hal/primary-hal",
+      "origin": "https://github.com/AOSPA/android_hardware_qcom_audio",
+      "commit": "81ee4c79ff1eb9fce2941749acba5187dbde40b4",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/qcom/display",
+      "origin": "https://github.com/AOSPA/android_hardware_qcom_display",
+      "commit": "126670adf39d253ee58323239ec7bd05770ac7d8",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/qcom/gps",
+      "origin": "https://github.com/AOSPA/android_hardware_qcom_gps",
+      "commit": "e822feb886a59de37fd674a05929477e607e678d",
+      "branch": "a17-port",
+      "shallow": false
+    },
+    {
+      "path": "hardware/qcom/media",
+      "origin": "https://github.com/AOSPA/android_hardware_qcom_media",
+      "commit": "64b5ade361daa23f2b1299adb587183722aaaf30",
+      "branch": "a17-port",
+      "shallow": false
+    }
+  ],
+  "preserved_references": [
+    {
+      "path": "hardware/oplus-a14-ref",
+      "origin": "https://github.com/AOSPA/android_hardware_oplus",
+      "commit": "349da2c8fb9294af7fb57bd1526ca0ab9eaeec7d",
+      "branch": "uvite",
+      "shallow": false
+    },
+    {
+      "path": "vendor/realme-a14-ref",
+      "origin": "https://github.com/ThankYouMario/proprietary_vendor_realme",
+      "commit": "c7b712efc77ae79106509b84620d4ec0611c4966",
+      "branch": "uvite",
+      "shallow": false
+    },
+    {
+      "path": "vendor/realme-a17-ref/porsche",
+      "origin": "https://github.com/resist15/vendor_realme_porsche",
+      "commit": "8bdc52979f0fe9f424a92b62b7bf0c72e52b4c76",
+      "branch": "topaz",
+      "shallow": false
+    },
+    {
+      "path": "vendor/oplus/camera-a14-ref",
+      "origin": "https://gitlab.com/ThankYouMario/proprietary_vendor_oplus_camera",
+      "commit": "76cdccbf61afe781b877388a3716835f286b29cd",
+      "branch": "uvite-porsche",
+      "shallow": false
+    },
+    {
+      "path": "vendor/nxp/opensource/halimpl-a14-ref",
+      "origin": "https://github.com/AOSPA/android_vendor_nxp_opensource_halimpl",
+      "commit": "390305d04d2ddc708aea19be19af7530cae94a0e",
+      "branch": "uvite-SN100X-legacy",
+      "shallow": false
+    },
+    {
+      "path": "vendor/nxp/opensource/hidlimpl-a14-ref",
+      "origin": "https://github.com/AOSPA/android_vendor_nxp_opensource_hidlimpl",
+      "commit": "2434bb4598d764345208733e1bcd2b203ad49fee",
+      "branch": "uvite-SN100X-legacy",
+      "shallow": false
+    },
+    {
+      "path": "kernel/msm-5.4",
+      "origin": "https://github.com/AOSPA/android_kernel_realme_sm8350",
+      "commit": "311f22ac6f16875c48c3fc45c0becb911fbf4bb3",
+      "branch": "uvite",
+      "shallow": false
+    }
+  ]
+}
