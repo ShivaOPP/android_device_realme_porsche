@@ -196,17 +196,23 @@ those permissions. Calcite's test permits DSP Binder/FD communication, not this
 service discovery (`system/sepolicy/tests/sepolicy_tests.py`,
 `TestIsolatedAttributeConsistency`).
 
-`patches/calcite-dsp-isolation.patch` is a proposal only. It replaces that macro
+`patches/calcite-dsp-isolation.patch` was applied in commit `723fae3` following
+the user's expanded authorization. It replaces that macro
 with two Binder-call grants, preserving calls and file descriptor transfer while
-removing discoverable HAL client membership. It has not been applied or built.
+removing discoverable HAL client membership. The native `selinux_policy` target
+passed, including neverallows, context tests, Treble compatibility tests and
+final `sepolicy_test` (`.repo/porsche-rbe-selinux.log`). RBE performed 1,440
+remote executions during this run.
 TODO(porsche): validate DSP handle delivery and isolated compute behavior with
 this narrower policy; normal camera and app DSP client declarations are retained.
-Applying it needs a new exception for this one file in `device/qcom/sepolicy`,
-plus permission to reapply the reverted two-entry context fix for validation.
+The user authorized the policy scope expansion without another approval step.
+The two-entry context fix was reapplied as its own commit `acc799a`; the
+protected active QMS and IPerf mappings still match their original hashes.
 
 `check-vintf-all` expanded to about 147,000 build actions and was interrupted
 after the SELinux failure. It produced no compatibility verdict.
 `context-fix-validation.json` records the rollback and protected mapping hashes.
 The logs are `.repo/porsche-context-selinux.log` and
-`.repo/porsche-context-vintf.log`. The next build attempt will use the installed
-`/home/ubuntu/.rbe/rbe-auto.sh` helper via `rbe_auto`, as requested.
+`.repo/porsche-context-vintf.log`. Builds now use the installed `/home/ubuntu/.rbe/rbe-auto.sh` helper via
+`rbe_auto`, as requested. The current OTA and full VINTF build is logged in
+`.repo/porsche-rbe-ota-01.log`; it has not produced a final verdict yet.

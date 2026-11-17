@@ -25,7 +25,24 @@
   "proposed_fix": {
     "patch": "porting/patches/calcite-dsp-isolation.patch",
     "target": "device/qcom/sepolicy/generic/product/private/isolated_compute_app.te",
-    "status": "Not applied; requires a new directory exception and validation.",
+    "status": "Applied as 723fae3 following expanded authorization; SELinux validation passed.",
     "behavior": "Keep DSP Binder calls and FD transfer, without granting isolated compute processes direct service discovery."
+  },
+  "next_attempt": {
+    "authorization": "User authorized continuing fixes without further approval; keep CLO behavior and hardware support.",
+    "qcom_common_commit": "acc799abbd32464d8b558723ebdff7739158e0ca",
+    "qcom_policy_commit": "723fae36c4d292720a09cbd4434b5f8ef08f53b6",
+    "selinux_exit": 0,
+    "selinux_log": ".repo/porsche-rbe-selinux.log",
+    "selinux_status": "PASS: compilation, neverallows, context tests, Treble compatibility tests, and final sepolicy_test.",
+    "rbe_stats": {
+      "remote_executions": 1440,
+      "cache_hits": 5,
+      "download_MB": 180.85,
+      "upload_MB": 8.66
+    },
+    "vintf_status": "Running with the integrated OTA build; no verdict yet.",
+    "build_log": ".repo/porsche-rbe-ota-01.log",
+    "remaining_runtime_check": "Validate isolated compute DSP handle delivery; normal camera/app DSP client memberships remain unchanged."
   }
 }
