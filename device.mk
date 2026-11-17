@@ -74,10 +74,30 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Touch
+$(call soong_config_set_bool,OPLUS_LINEAGE_TOUCH_HAL,ENABLE_HTPR,true)
+$(call soong_config_set_bool,OPLUS_LINEAGE_TOUCH_HAL,ENABLE_TG,true)
+$(call soong_config_set_bool,OPLUS_LINEAGE_TOUCH_HAL,USE_OPLUSTOUCH,false)
+$(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,GESTURE_ENABLE_INDEP_NODES,/proc/touchpanel/double_tap_enable_indep)
 $(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,INCLUDE_DIR,$(LOCAL_PATH)/touch/include)
+# TODO(porsche): keep ENABLE_GM at the A17 default (false); no verified Porsche
+# glove-mode setting was enabled by that tree. HTPR_ENABLE_NODE/HTPR_ENABLE_VALUE
+# retain their HAL defaults (GAME_SWITCH_ENABLE_NODE/1) for the unused stock
+# AIDL backend. The active direct backend writes game_switch_enable, as in A17.
+
+# LiveDisplay: preserve the working A17 service's default PA/SE selection.
+$(call soong_config_set_bool,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_PA,true)
+$(call soong_config_set_bool,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_SE,true)
+# TODO(porsche): ENABLE_AB/ENABLE_AF/ENABLE_DM stay unset (default false).
+# The reference did not enable these features; no equivalent controls have
+# been verified for Porsche, so do not infer support from other Oplus panels.
 
 # Vibrator
 $(call soong_config_set_bool,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
+# TODO(porsche): keep vibrator INCLUDE_DIR unset, matching the A17 reference;
+# the uvite effect header is not a verified override for this implementation.
+# TODO(porsche): OPLUS_SENSORS_FUSIONLIGHT/BACKEND_SUBHAL_LIB_NAME stays unset.
+# The booting reference selects sensors.oplus and sensors.qti directly, not
+# the FusionLight wrapper. Keep those original sensors and their configuration.
 
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8350-common/common.mk)

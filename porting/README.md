@@ -245,3 +245,19 @@ snapshots and originals remain. The display libraries passed ARM/ARM64 builds.
 Current active shared headers are under
 `device/oneplus/sm8350-common/uapi/kernel-headers`, with architecture differences
 under `kernel-headers/arm` and `kernel-headers/arm64`.
+
+## Oplus candidate decision
+
+`oplus-comparison.md` and its JSON inventory compare the active ported PixelOS
+tree, Penguin Celerity and the preserved AOSPA uvite tree. PixelOS stays active:
+Penguin removed the touch, LiveDisplay and amplifier implementations required
+by the primary Porsche tree, despite retaining some related README options.
+The Penguin copy is preserved at `hardware/oplus-penguin` and excluded from
+source scans. No path swap or feature deletion was needed.
+
+Porsche now explicitly retains the primary touch/polling/gesture and PA/SE
+selections. Unverified optional settings have TODO comments and keep their
+reference defaults. Its sensors config loads `sensors.ssc.so` and
+`sensors.oplus.so`; FusionLight is not substituted. The selected Oplus HALs
+and native SELinux checks passed. The native recovery helper also passed after
+selecting BSG from the actual kernel's `CONFIG_SCSI_UFS_BSG=y` and public UAPI.
