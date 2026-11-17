@@ -198,8 +198,9 @@ service discovery (`system/sepolicy/tests/sepolicy_tests.py`,
 
 `patches/calcite-dsp-isolation.patch` was applied in commit `723fae3` following
 the user's expanded authorization. It replaces that macro
-with two Binder-call grants, preserving calls and file descriptor transfer while
-removing discoverable HAL client membership. The native `selinux_policy` target
+with two Binder-call grants and the original CLO memfd grants, preserving
+calls, file descriptor transfer and shared-memory access while removing
+discoverable HAL client membership. The native `selinux_policy` target
 passed, including neverallows, context tests, Treble compatibility tests and
 final `sepolicy_test` (`.repo/porsche-rbe-selinux.log`). RBE performed 1,440
 remote executions during this run.
@@ -216,3 +217,13 @@ The logs are `.repo/porsche-context-selinux.log` and
 `.repo/porsche-context-vintf.log`. Builds now use the installed `/home/ubuntu/.rbe/rbe-auto.sh` helper via
 `rbe_auto`, as requested. The current OTA and full VINTF build is logged in
 `.repo/porsche-rbe-ota-01.log`; it has not produced a final verdict yet.
+
+The first OTA run was deliberately interrupted after about 48,600 actions to
+restore the original CLO DSP shared-memory buffer permissions (`b0e1190`).
+The updated native `selinux_policy` validation passed again
+(`.repo/porsche-rbe-selinux-02.log`). `audit-dsp-policy.py` checks the actual
+compiled policy: bidirectional Binder/FD/memfd permissions remain, ordinary app
+clients retain both HIDL/AIDL discovery, and isolated compute cannot discover
+those DSP services directly. `dsp-ipc-validation.json` records all ten successful
+checks and the policy hash. The integrated build resumes in
+`.repo/porsche-rbe-ota-02.log`; full VINTF and image results are still pending.

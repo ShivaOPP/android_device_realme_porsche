@@ -41,8 +41,13 @@
       "download_MB": 180.85,
       "upload_MB": 8.66
     },
-    "vintf_status": "Running with the integrated OTA build; no verdict yet.",
-    "build_log": ".repo/porsche-rbe-ota-01.log",
-    "remaining_runtime_check": "Validate isolated compute DSP handle delivery; normal camera/app DSP client memberships remain unchanged."
+    "vintf_status": "Resuming OTA/VINTF build with restored CLO DSP buffer permissions; no compatibility verdict yet.",
+    "build_log": ".repo/porsche-rbe-ota-02.log",
+    "remaining_runtime_check": "Validate isolated compute DSP handle delivery; normal camera/app DSP client memberships remain unchanged.",
+    "dsp_memfd_commit": "b0e119091f787be8cb4d22a8a4db6fb98e7b43af",
+    "selinux_after_memfd": "PASS: native selinux_policy target, exit 0.",
+    "selinux_after_memfd_log": ".repo/porsche-rbe-selinux-02.log",
+    "dsp_compiled_audit": "PASS: bidirectional Binder, FD, memfd; normal client discovery retained; isolated discovery absent.",
+    "dsp_compiled_report": "porting/dsp-ipc-validation.json"
   }
 }
