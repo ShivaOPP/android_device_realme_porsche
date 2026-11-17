@@ -1,5 +1,5 @@
 {
-  "branch": "porsche-aospa",
+  "branch": "porsche-aospa-shiva",
   "owner": "ShivaOPP",
   "repositories": [
     {
@@ -133,5 +133,7 @@
       "upstream": "https://github.com/AOSPA/android_frameworks_base"
     }
   ],
-  "note": "Upstream source identities and old local histories remain recorded separately; no existing GitHub branch is rewritten."
+  "note": "Upstream source identities and old local histories remain recorded separately; no existing GitHub branch is rewritten.",
+  "local_branch": "a17-port-shiva",
+  "authorship": "Only local port commits are author/committer-corrected; original branches and upstream authors remain intact."
 }

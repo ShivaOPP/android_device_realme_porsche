@@ -1,55 +1,55 @@
 <?xml version='1.0' encoding='utf-8'?>
 <manifest>
   <remove-project path="device/realme/porsche" optional="true" />
-  <project path="device/realme/porsche" name="ShivaOPP/android_device_realme_porsche" remote="github" revision="porsche-aospa" />
+  <project path="device/realme/porsche" name="ShivaOPP/android_device_realme_porsche" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="device/oneplus/sm8350-common" optional="true" />
-  <project path="device/oneplus/sm8350-common" name="ShivaOPP/android_device_oneplus_sm8350-common" remote="github" revision="porsche-aospa" />
+  <project path="device/oneplus/sm8350-common" name="ShivaOPP/android_device_oneplus_sm8350-common" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="vendor/aospa" optional="true" />
-  <project path="vendor/aospa" name="ShivaOPP/android_vendor_aospa" remote="github" revision="porsche-aospa" />
+  <project path="vendor/aospa" name="ShivaOPP/android_vendor_aospa" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="vendor/realme/porsche" optional="true" />
-  <project path="vendor/realme/porsche" name="ShivaOPP/proprietary_vendor_realme_porsche" remote="github" revision="porsche-aospa" />
+  <project path="vendor/realme/porsche" name="ShivaOPP/proprietary_vendor_realme_porsche" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="vendor/oneplus/sm8350-common" optional="true" />
-  <project path="vendor/oneplus/sm8350-common" name="ShivaOPP/proprietary_vendor_oneplus_sm8350-common" remote="github" revision="porsche-aospa" />
+  <project path="vendor/oneplus/sm8350-common" name="ShivaOPP/proprietary_vendor_oneplus_sm8350-common" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="vendor/oplus/camera" optional="true" />
-  <project path="vendor/oplus/camera" name="ShivaOPP/proprietary_vendor_oplus_camera" remote="github" revision="porsche-aospa" />
+  <project path="vendor/oplus/camera" name="ShivaOPP/proprietary_vendor_oplus_camera" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/oplus" optional="true" />
-  <project path="hardware/oplus" name="ShivaOPP/android_hardware_oplus" remote="github" revision="porsche-aospa" />
+  <project path="hardware/oplus" name="ShivaOPP/android_hardware_oplus" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/dolby" optional="true" />
-  <project path="hardware/dolby" name="ShivaOPP/android_hardware_dolby" remote="github" revision="porsche-aospa" />
+  <project path="hardware/dolby" name="ShivaOPP/android_hardware_dolby" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/pixelworks/interfaces" optional="true" />
-  <project path="hardware/pixelworks/interfaces" name="ShivaOPP/android_hardware_pixelworks_interfaces" remote="github" revision="porsche-aospa" />
+  <project path="hardware/pixelworks/interfaces" name="ShivaOPP/android_hardware_pixelworks_interfaces" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="kernel/oneplus/sm8350" optional="true" />
-  <project path="kernel/oneplus/sm8350" name="ShivaOPP/android_kernel_oneplus_sm8350" remote="github" revision="porsche-aospa" />
+  <project path="kernel/oneplus/sm8350" name="ShivaOPP/android_kernel_oneplus_sm8350" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/lineage/interfaces" optional="true" />
-  <project path="hardware/lineage/interfaces" name="ShivaOPP/android_hardware_lineage_interfaces" remote="github" revision="porsche-aospa" />
+  <project path="hardware/lineage/interfaces" name="ShivaOPP/android_hardware_lineage_interfaces" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="device/lineage/sepolicy" optional="true" />
-  <project path="device/lineage/sepolicy" name="ShivaOPP/android_device_lineage_sepolicy" remote="github" revision="porsche-aospa" />
+  <project path="device/lineage/sepolicy" name="ShivaOPP/android_device_lineage_sepolicy" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="vendor/qcom/opensource/audio-hal/primary-hal" optional="true" />
-  <project path="vendor/qcom/opensource/audio-hal/primary-hal" name="ShivaOPP/android_hardware_qcom_audio" remote="github" revision="porsche-aospa" />
+  <project path="vendor/qcom/opensource/audio-hal/primary-hal" name="ShivaOPP/android_hardware_qcom_audio" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/qcom/display" optional="true" />
-  <project path="hardware/qcom/display" name="ShivaOPP/android_hardware_qcom_display" remote="github" revision="porsche-aospa" />
+  <project path="hardware/qcom/display" name="ShivaOPP/android_hardware_qcom_display" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/qcom/gps" optional="true" />
-  <project path="hardware/qcom/gps" name="ShivaOPP/android_hardware_qcom_gps" remote="github" revision="porsche-aospa" />
+  <project path="hardware/qcom/gps" name="ShivaOPP/android_hardware_qcom_gps" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/qcom/media" optional="true" />
-  <project path="hardware/qcom/media" name="ShivaOPP/android_hardware_qcom_media" remote="github" revision="porsche-aospa" />
+  <project path="hardware/qcom/media" name="ShivaOPP/android_hardware_qcom_media" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/google/pixel" optional="true" />
-  <project path="hardware/google/pixel" name="ShivaOPP/android_hardware_google_pixel" remote="github" revision="porsche-aospa" />
+  <project path="hardware/google/pixel" name="ShivaOPP/android_hardware_google_pixel" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/qcom-caf/common" optional="true" />
-  <project path="hardware/qcom-caf/common" name="ShivaOPP/android_hardware_qcom-caf_common" remote="github" revision="porsche-aospa" />
+  <project path="hardware/qcom-caf/common" name="ShivaOPP/android_hardware_qcom-caf_common" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="vendor/qcom/opensource/thermal-hal" optional="true" />
-  <project path="vendor/qcom/opensource/thermal-hal" name="ShivaOPP/android_hardware_qcom_thermal" remote="github" revision="porsche-aospa" />
+  <project path="vendor/qcom/opensource/thermal-hal" name="ShivaOPP/android_hardware_qcom_thermal" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/oplus/packages/EuiccPolicy" optional="true" />
-  <project path="hardware/oplus/packages/EuiccPolicy" name="ShivaOPP/android_packages_apps_EuiccPolicy" remote="github" revision="porsche-aospa" />
+  <project path="hardware/oplus/packages/EuiccPolicy" name="ShivaOPP/android_packages_apps_EuiccPolicy" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="device/qcom/common" optional="true" />
-  <project path="device/qcom/common" name="ShivaOPP/android_device_qcom_common" remote="github" revision="porsche-aospa" />
+  <project path="device/qcom/common" name="ShivaOPP/android_device_qcom_common" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="device/qcom/sepolicy" optional="true" />
-  <project path="device/qcom/sepolicy" name="ShivaOPP/sepolicy" remote="github" revision="porsche-aospa" />
+  <project path="device/qcom/sepolicy" name="ShivaOPP/sepolicy" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="build/make" optional="true" />
-  <project path="build/make" name="ShivaOPP/android_build" remote="github" revision="porsche-aospa" />
+  <project path="build/make" name="ShivaOPP/android_build" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="build/soong" optional="true" />
-  <project path="build/soong" name="ShivaOPP/android_build_soong" remote="github" revision="porsche-aospa" />
+  <project path="build/soong" name="ShivaOPP/android_build_soong" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/interfaces" optional="true" />
-  <project path="hardware/interfaces" name="ShivaOPP/android_hardware_interfaces" remote="github" revision="porsche-aospa" />
+  <project path="hardware/interfaces" name="ShivaOPP/android_hardware_interfaces" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="frameworks/base" optional="true" />
-  <project path="frameworks/base" name="ShivaOPP/android_frameworks_base" remote="github" revision="porsche-aospa" />
+  <project path="frameworks/base" name="ShivaOPP/android_frameworks_base" remote="github" revision="porsche-aospa-shiva" />
 </manifest>

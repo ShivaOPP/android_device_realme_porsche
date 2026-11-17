@@ -16,7 +16,7 @@ unselected reference files. AOSPA-specific resources, product inheritance and
 vendor hooks are preserved and translated to calcite.
 
 `sources.json` records inspected upstream baselines. Every edited repository
-uses a local `a17-port` branch, published as `porsche-aospa` under ShivaOPP.
+uses a local `a17-port-shiva` branch, published as `porsche-aospa-shiva` under ShivaOPP.
 `published-sources.json` maps the required forks; `sources.json` preserves their
 original upstream identities. The publishing operation preserves existing remote
 branches. A separate `porsche-aospa-backup` repository provides pinned manifests,
@@ -93,7 +93,7 @@ with exactly the same sync command. The `-j16` build option is separate from
 Repo's required `-j48`. On a fresh checkout, install the published local manifest
 before sync, or follow the pinned source/complete snapshot recovery instructions
 in `https://github.com/ShivaOPP/porsche-aospa-backup`. The dependency files now
-select the published `porsche-aospa` branches; no manual cherry-pick is needed.
+select the published `porsche-aospa-shiva` branches; no manual cherry-pick is needed.
 
 ## Current validation
 

@@ -3,150 +3,150 @@
     "remote": "github",
     "repository": "ShivaOPP/android_device_oneplus_sm8350-common",
     "target_path": "device/oneplus/sm8350-common",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/proprietary_vendor_realme_porsche",
     "target_path": "vendor/realme/porsche",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_oplus",
     "target_path": "hardware/oplus",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_kernel_oneplus_sm8350",
     "target_path": "kernel/oneplus/sm8350",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_pixelworks_interfaces",
     "target_path": "hardware/pixelworks/interfaces",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/proprietary_vendor_oneplus_sm8350-common",
     "target_path": "vendor/oneplus/sm8350-common",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/proprietary_vendor_oplus_camera",
     "target_path": "vendor/oplus/camera",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_dolby",
     "target_path": "hardware/dolby",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_lineage_interfaces",
     "target_path": "hardware/lineage/interfaces",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_device_lineage_sepolicy",
     "target_path": "device/lineage/sepolicy",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_google_pixel",
     "target_path": "hardware/google/pixel",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_qcom_audio",
     "target_path": "vendor/qcom/opensource/audio-hal/primary-hal",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_qcom_display",
     "target_path": "hardware/qcom/display",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_qcom_gps",
     "target_path": "hardware/qcom/gps",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_qcom_media",
     "target_path": "hardware/qcom/media",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_qcom-caf_common",
     "target_path": "hardware/qcom-caf/common",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_qcom_thermal",
     "target_path": "vendor/qcom/opensource/thermal-hal",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_packages_apps_EuiccPolicy",
     "target_path": "hardware/oplus/packages/EuiccPolicy",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_vendor_aospa",
     "target_path": "vendor/aospa",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_device_qcom_common",
     "target_path": "device/qcom/common",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/sepolicy",
     "target_path": "device/qcom/sepolicy",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_build",
     "target_path": "build/make",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_build_soong",
     "target_path": "build/soong",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_hardware_interfaces",
     "target_path": "hardware/interfaces",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   },
   {
     "remote": "github",
     "repository": "ShivaOPP/android_frameworks_base",
     "target_path": "frameworks/base",
-    "revision": "porsche-aospa"
+    "revision": "porsche-aospa-shiva"
   }
 ]
