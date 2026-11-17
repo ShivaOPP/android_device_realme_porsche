@@ -1,0 +1,30 @@
+{
+  "resolved_collisions": [
+    {
+      "copy": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/flp.conf:vendor/etc/flp.conf",
+      "soong": "out/soong/.intermediates/hardware/qcom/gps/etc/flp.conf/android_vendor_arm64_armv8-2a-dotprod_cortex-a76/flp.conf"
+    },
+    {
+      "copy": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/gnss_antenna_info.conf:vendor/etc/gnss_antenna_info.conf",
+      "soong": "out/soong/.intermediates/hardware/qcom/gps/etc/gnss_antenna_info.conf/android_vendor_arm64_armv8-2a-dotprod_cortex-a76/gnss_antenna_info.conf"
+    },
+    {
+      "copy": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/gps.conf:vendor/etc/gps.conf",
+      "soong": "out/soong/.intermediates/hardware/qcom/gps/etc/gps.conf/android_vendor_arm64_armv8-2a-dotprod_cortex-a76/gps.conf"
+    },
+    {
+      "copy": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-base.policy:vendor/etc/seccomp_policy/gnss@2.0-base.policy",
+      "soong": "out/soong/.intermediates/hardware/qcom/gps/etc/gnss@2.0-base.policy/android_vendor_arm64_armv8-2a-dotprod_cortex-a76/gnss@2.0-base.policy"
+    },
+    {
+      "copy": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-xtra-daemon.policy:vendor/etc/seccomp_policy/gnss@2.0-xtra-daemon.policy",
+      "soong": "out/soong/.intermediates/hardware/qcom/gps/etc/gnss@2.0-xtra-daemon.policy/android_vendor_arm64_armv8-2a-dotprod_cortex-a76/gnss@2.0-xtra-daemon.policy"
+    },
+    {
+      "copy": "vendor/oneplus/sm8350-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy:vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy",
+      "soong": "out/soong/.intermediates/hardware/qcom/gps/etc/gnss@2.0-xtwifi-client.policy/android_vendor_arm64_armv8-2a-dotprod_cortex-a76/gnss@2.0-xtwifi-client.policy"
+    }
+  ],
+  "resolution": "Use calcite GNSS prebuilt_etc modules with src filegroups backed by the unchanged A17 vendor files; remove duplicate copy rules.",
+  "remaining_collisions": []
+}

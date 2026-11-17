@@ -1,0 +1,18 @@
+--- a/device/qcom/common/sepolicy/generic/vendor/common/vndservice_contexts
++++ b/device/qcom/common/sepolicy/generic/vendor/common/vndservice_contexts
+@@ -1 +1,2 @@
+-vendor.qti.data.qmsservice.IQmsService  u:object_r:vendor_qms_service:s0
++# QMS uses the Binder service_contexts entry from CLO; its type is not a
++# vndservice_manager_type, so it must not also be registered here.
+--- a/device/qcom/common/sepolicy/qva/vendor/common/hwservice_contexts
++++ b/device/qcom/common/sepolicy/qva/vendor/common/hwservice_contexts
+@@ -6,7 +6,8 @@
+ vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:vendor_hal_qseecom_hwservice:s0
+ vendor.qti.hardware.qccvndhal::IQccvndhal                     u:object_r:vendor_hal_qccvndhal_hwservice:s0
+ com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:vendor_wifidisplayhalservice_hwservice:s0
+-vendor.qti.hardware.iop::IIop                                u:object_r:vendor_hal_iop_hwservice:s0
++# The A17 SM8350 reference ships the HIDL IPerf service, with no IIop
++# instance/library or vendor_hal_iop_hwservice type. CLO retains IPerf context.
+ com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:vendor_wifidisplayhalservice_hwservice:s0
+ vendor.qti.hardware.audiohalext::IAudioHalExt                u:object_r:hal_audio_hwservice:s0
+ com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:vendor_hal_imsrcsd_hwservice:s0

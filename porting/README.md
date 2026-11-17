@@ -80,7 +80,8 @@ repo sync --current-branch --no-tags -j48
 
 # Use the existing local a17-port repositories.
 export AOSPA_SKIP_DEPENDENCIES=true
-source build/envsetup.sh
+source /home/ubuntu/.rbe/rbe-auto.sh
+rbe_auto /home/ubuntu/rom
 lunch aospa_porsche-userdebug
 # Explicit release form is also supported:
 # lunch aospa_porsche-cp2a-userdebug
@@ -111,6 +112,10 @@ including camera, audio and display headers. `kernel-headers.json` records their
 hashes and provenance; regenerate them with
 `python3 device/oneplus/sm8350-common/regenerate-kernel-headers.py` after relevant
 kernel changes. Raw original headers and the kernel COPYING file are retained.
+
+The current generated graph has no collisions between Soong installs and
+`PRODUCT_COPY_FILES`. Calcite GNSS config modules consume unchanged A17 vendor
+files through explicit source groups.
 
 The A17 reference owns fingerprint, NFC/eSE, camera, audio, display, sensors,
 telephony/GPS and HIDL Dolby selections. None is intentionally removed. AOSPA's
@@ -173,3 +178,35 @@ git -C vendor/realme-a17-ref/porsche sparse-checkout disable
 `.find-ignore` markers keep preserved reference repositories out of both Soong
 and Make scanning. Remove those markers only when intentionally reactivating a
 reference. Their original branches and full Git history remain available.
+
+## SELinux / VINTF rollback checkpoint
+
+The approved two-entry context fix in `device/qcom/common` was committed as
+`c9f9220c574ef35bbd5138664da7a3b549fb6a41` and reverted as
+`2a7fd19345f307f610c0bce05430e4cbbe5ff83c` after validation failed, as requested.
+The repository is byte-for-byte restored to its baseline. Active CLO QMS and
+IPerf mapping files were hash-checked and remain unchanged.
+
+Policy compilation, neverallows and context checks passed with that patch, but
+final `sepolicy_test` rejects `isolated_compute_app` discovery of
+`vendor_hal_dspmanager_hwservice` and `vendor_hal_dspmanager_aidlservice`. The
+explicit client macro in
+`device/qcom/sepolicy/generic/product/private/isolated_compute_app.te` supplies
+those permissions. Calcite's test permits DSP Binder/FD communication, not this
+service discovery (`system/sepolicy/tests/sepolicy_tests.py`,
+`TestIsolatedAttributeConsistency`).
+
+`patches/calcite-dsp-isolation.patch` is a proposal only. It replaces that macro
+with two Binder-call grants, preserving calls and file descriptor transfer while
+removing discoverable HAL client membership. It has not been applied or built.
+TODO(porsche): validate DSP handle delivery and isolated compute behavior with
+this narrower policy; normal camera and app DSP client declarations are retained.
+Applying it needs a new exception for this one file in `device/qcom/sepolicy`,
+plus permission to reapply the reverted two-entry context fix for validation.
+
+`check-vintf-all` expanded to about 147,000 build actions and was interrupted
+after the SELinux failure. It produced no compatibility verdict.
+`context-fix-validation.json` records the rollback and protected mapping hashes.
+The logs are `.repo/porsche-context-selinux.log` and
+`.repo/porsche-context-vintf.log`. The next build attempt will use the installed
+`/home/ubuntu/.rbe/rbe-auto.sh` helper via `rbe_auto`, as requested.

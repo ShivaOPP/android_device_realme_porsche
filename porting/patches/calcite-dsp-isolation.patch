@@ -1,0 +1,13 @@
+--- a/device/qcom/sepolicy/generic/product/private/isolated_compute_app.te
++++ b/device/qcom/sepolicy/generic/product/private/isolated_compute_app.te
+@@ -1,5 +1,8 @@
+ # Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ # SPDX-License-Identifier: BSD-3-Clause-Clear
+ 
+-# allow isolated_compute_app to be a client of DSP HAL
+-hal_client_domain(isolated_compute_app, vendor_hal_dspmanager)
++# TODO(porsche): Calcite forbids DSP service discovery from isolated compute
++# processes. Retain Binder calls and descriptor transfer for DSP handles supplied
++# by an allowed broker, without joining the discoverable HAL client attribute.
++binder_call(isolated_compute_app, vendor_hal_dspmanager_server)
++binder_call(vendor_hal_dspmanager_server, isolated_compute_app)

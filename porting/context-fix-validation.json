@@ -1,0 +1,31 @@
+{
+  "baseline": "df812783f7f38702769c2b32f927c6ea1ea9d78a",
+  "protected_sha256": {
+    "device/qcom/sepolicy_vndr/generic/vendor/common/service_contexts": "24a4d153a660b1108ed12f444df7235c9efcf001ae35aab51ac58890ad7a9ad6",
+    "device/qcom/sepolicy_vndr/generic/vendor/common/service.te": "3684d784a6c933d954904538ec823466ceb5ddf245988167f07f2572090c5c0a",
+    "device/qcom/sepolicy_vndr/generic/vendor/common/hwservice_contexts": "dbcfbd2af316fbbcad5e809934e54d576ba261ee4fdaf7e101701623b20cd844",
+    "device/qcom/sepolicy_vndr/generic/vendor/common/hwservice.te": "2fde7c0a37cf7ce0a1a500f9a8e1ca61f6208b7283057e1a507ea6a45d54201a"
+  },
+  "commit": "c9f9220c574ef35bbd5138664da7a3b549fb6a41",
+  "files": [
+    "sepolicy/generic/vendor/common/vndservice_contexts",
+    "sepolicy/qva/vendor/common/hwservice_contexts"
+  ],
+  "setup_exit": 0,
+  "selinux_exit": 1,
+  "vintf_exit": 1,
+  "mapping_hashes_unchanged": true,
+  "working_tree_changes": [],
+  "commit_files_verified": true,
+  "reverted": true,
+  "revert_commit": "2a7fd19345f307f610c0bce05430e4cbbe5ff83c",
+  "restored_to_baseline": true,
+  "vintf_status": "Interrupted before compatibility verdict after SELinux failed, to honor rollback condition.",
+  "selinux_failure": "Final sepolicy_test rejects isolated_compute_app find access to vendor_hal_dspmanager_hwservice and vendor_hal_dspmanager_aidlservice.",
+  "proposed_fix": {
+    "patch": "porting/patches/calcite-dsp-isolation.patch",
+    "target": "device/qcom/sepolicy/generic/product/private/isolated_compute_app.te",
+    "status": "Not applied; requires a new directory exception and validation.",
+    "behavior": "Keep DSP Binder calls and FD transfer, without granting isolated compute processes direct service discovery."
+  }
+}
