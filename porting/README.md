@@ -227,3 +227,21 @@ clients retain both HIDL/AIDL discovery, and isolated compute cannot discover
 those DSP services directly. `dsp-ipc-validation.json` records all ten successful
 checks and the policy hash. The integrated build resumes in
 `.repo/porsche-rbe-ota-02.log`; full VINTF and image results are still pending.
+
+## LG reference review
+
+`lg-reference-review.md` and its JSON report identify the exact read-only LG
+references and matching Android 17 / AOSPA calcite platform ancestry (custom
+PenguinOS Celerity branding). They are not an older Android 13 ROM base.
+Porsche retains upstream AOSPA product hooks, lunch registration and dependency
+format; no LG hardware data is imported. `ref-lg/.find-ignore` and the Porsche
+source exclusions keep reference modules out of the build.
+
+The comparison led to per-architecture Bionic-clean UAPI exports, preservation
+of the primary A17 Porsche dual-ABI app/zygote setting, and restoration of the
+native display selector flags when using the reference common/vendor package
+ownership. All UAPI bytes originate from `kernel/oneplus/sm8350`; old raw
+snapshots and originals remain. The display libraries passed ARM/ARM64 builds.
+Current active shared headers are under
+`device/oneplus/sm8350-common/uapi/kernel-headers`, with architecture differences
+under `kernel-headers/arm` and `kernel-headers/arm64`.

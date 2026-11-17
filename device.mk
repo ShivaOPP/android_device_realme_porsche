@@ -67,6 +67,9 @@ PRODUCT_PACKAGES += \
     TargetWifiOverlay
 
 # Soong namespaces
+# Reference-only LG sources must never provide modules to this product.
+PRODUCT_SOURCE_ROOT_DIRS += -ref-lg
+
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
