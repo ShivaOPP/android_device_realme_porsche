@@ -1,0 +1,38 @@
+{
+  "source": "https://android.googlesource.com/platform/hardware/interfaces/+/refs/tags/android-16.0.0_r4/",
+  "aosp_tag": "android-16.0.0_r4",
+  "reason": "The calcite-shipped FCM 6 matrix references retired AOSP HIDL interfaces absent from this platform checkout; checkvintf --check-one exits70 without their API definitions.",
+  "files_sha256": {
+    "automotive/sv/1.0/Android.bp": "addfb0870775442a4d4ffada0aa3257127b3a960dcec506f26697ccefac903de",
+    "automotive/sv/1.0/ISurroundView2dSession.hal": "4e4904c4067dadae974ddf90351f362331dcd04bba1d890d313cc8ba91f68c15",
+    "automotive/sv/1.0/ISurroundView3dSession.hal": "63336e9d03f545020ff2982ff76d9d8c44fa76ad476293b5ef6732cbbd71e61b",
+    "automotive/sv/1.0/ISurroundViewService.hal": "b7015428cd52ce8192d13bfcbf2c4455cda3727d57f2aac80d65a1747104f5ac",
+    "automotive/sv/1.0/ISurroundViewSession.hal": "7d2e77ad86766bbc213fa7377eab739f44cc0866e567e6d33c0e27e7f99e27a8",
+    "automotive/sv/1.0/ISurroundViewStream.hal": "d34769e55df919739bb46f25ae2e125e9c807733afa94daeca20feadd74de79c",
+    "automotive/sv/1.0/types.hal": "affd9c591f48a69773fcf43dc4a716d292cd4bc5ba2be8649276af0aedea435d",
+    "dumpstate/1.0/Android.bp": "f7197ccf12c499241be4741998d08cf0046b8bcd873c3dc783f5dc3380f84f37",
+    "dumpstate/1.0/IDumpstateDevice.hal": "760485232f6cce07f8bb05e3475509956996b702f77415ee5bff05e2ec5a5bcc",
+    "dumpstate/1.1/Android.bp": "63402d148a100b921008139cf60bb88838cbaa809673ac5d4f7c6eef3300f974",
+    "dumpstate/1.1/IDumpstateDevice.hal": "186bc152ae189ab48f3a761a44ddf5edd0d483073c5b6ca1f802f8b50488b754",
+    "dumpstate/1.1/types.hal": "d9df99be0f59d8f33a9699fe316c67bfd11818aa69440bb1123ba43e717cea85",
+    "input/common/1.0/Android.bp": "20a51e9e81eebf0e90ec1aa050a8e6e45beb614b15eeb5ba182b7397eccc2efa",
+    "input/common/1.0/types.hal": "0300c7667030da36c3de585f176ce18ff4b0d2615446d4930f331097378c06ef",
+    "input/classifier/1.0/Android.bp": "b519862cdf28ec664f51aecf0e3f02d676cbfd38f13696005c1af19a74716f86",
+    "input/classifier/1.0/IInputClassifier.hal": "30006fde4cb1f255f2530208728bff692100411b20af5b66fa31a9196d51f00b",
+    "ir/1.0/Android.bp": "c1902b8e87e927d2d55f07495d5091bf55fb97de2fa41582be2bce0e17eb8c81",
+    "ir/1.0/IConsumerIr.hal": "3a8d3922e06e6d4f8e0befc6be78d0e9e07aed1585b3da6521bed406d25a9483",
+    "ir/1.0/types.hal": "7090bd37912fcf723a12f4bc17783e3527577c4944805a028c296fd7a95bd682"
+  },
+  "frozen_hashes_added": [
+    "3a8d3922e06e6d4f8e0befc6be78d0e9e07aed1585b3da6521bed406d25a9483 android.hardware.ir@1.0::IConsumerIr",
+    "7090bd37912fcf723a12f4bc17783e3527577c4944805a028c296fd7a95bd682 android.hardware.ir@1.0::types",
+    "4e4904c4067dadae974ddf90351f362331dcd04bba1d890d313cc8ba91f68c15 android.hardware.automotive.sv@1.0::ISurroundView2dSession",
+    "63336e9d03f545020ff2982ff76d9d8c44fa76ad476293b5ef6732cbbd71e61b android.hardware.automotive.sv@1.0::ISurroundView3dSession",
+    "b7015428cd52ce8192d13bfcbf2c4455cda3727d57f2aac80d65a1747104f5ac android.hardware.automotive.sv@1.0::ISurroundViewService",
+    "7d2e77ad86766bbc213fa7377eab739f44cc0866e567e6d33c0e27e7f99e27a8 android.hardware.automotive.sv@1.0::ISurroundViewSession",
+    "d34769e55df919739bb46f25ae2e125e9c807733afa94daeca20feadd74de79c android.hardware.automotive.sv@1.0::ISurroundViewStream",
+    "affd9c591f48a69773fcf43dc4a716d292cd4bc5ba2be8649276af0aedea435d android.hardware.automotive.sv@1.0::types"
+  ],
+  "runtime_services_added": false,
+  "hardware_configuration_changed": false
+}
