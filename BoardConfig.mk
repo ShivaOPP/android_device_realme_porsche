@@ -44,7 +44,10 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
 TARGET_POWER_FEATURE_EXT_LIB := //$(DEVICE_PATH):libpowerfeature_ext_porsche
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/oplus_chg/battery/mmi_charging_enable
 
-TARGET_OTA_ASSERT_DEVICE := RMX3312,RE58B2L1
+# TODO(porsche): the primary A17 tree's comma-separated legacy assertion is
+# treated as one literal device by calcite's A/B metadata generator. Use its
+# native ro.product.device identity (RE58B2L1 in all five generated partitions)
+# so both the text and protobuf metadata match the installed device.
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.default
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 103
 TARGET_SCREEN_DENSITY := 450
