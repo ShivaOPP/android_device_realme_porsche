@@ -124,9 +124,10 @@
     {
       "path": "hardware/google/pixel",
       "origin": "https://github.com/LineageOS/android_hardware_google_pixel",
-      "commit": "84e9844c5ff1ef61d6b9e93a2dc9a978d4005daa",
+      "commit": "8d371222290203e232f2e2b88cb86eb9d23e98de",
       "branch": "a17-port",
-      "shallow": false
+      "shallow": false,
+      "note": "Upstream baseline before the required local health V5 and PixelStats module_name adaptations."
     },
     {
       "path": "hardware/qcom-caf/common",
@@ -208,5 +209,80 @@
       "shallow": false
     }
   ],
-  "note": "Commits in this file identify inspected upstream baselines, not final local port commits. Local modifications are recorded on a17-port in each repository."
+  "note": "Commits in this file identify inspected upstream baselines, not final local port commits. Local modifications are recorded on a17-port in each repository.",
+  "edited_platform_baselines": [
+    {
+      "path": "device/qcom/common",
+      "commit": "df812783f7f38702769c2b32f927c6ea1ea9d78a",
+      "branch": "a17-port",
+      "platform_sync_shallow": true
+    },
+    {
+      "path": "device/qcom/sepolicy",
+      "commit": "e4732e532ed97ed8220b1e19f8933c0c68e00949",
+      "branch": "a17-port",
+      "platform_sync_shallow": true
+    },
+    {
+      "path": "build/make",
+      "commit": "a4e069faf2b5c4ed21689acac0bc5cae79c1ba35",
+      "branch": "a17-port",
+      "platform_sync_shallow": true
+    },
+    {
+      "path": "build/soong",
+      "commit": "47d8cc49751c2a7cea4bb00765269c0bbd8ca129",
+      "branch": "a17-port",
+      "platform_sync_shallow": true
+    },
+    {
+      "path": "hardware/interfaces",
+      "commit": "c0fa2c83463785fd25d6e6813934b7a3ed4dfa44",
+      "branch": "a17-port",
+      "platform_sync_shallow": true
+    }
+  ],
+  "platform_history_note": "The user allowed shallow platform sync. Manual primary/reference clones retain full history; edited platform projects retain the synced baseline and all local commits.",
+  "giulia_structure_references": [
+    {
+      "path": "ref-giulia/hardware/oplus",
+      "origin": "https://github.com/clo-for-giulia/hardware_oplus",
+      "branch": "celerity",
+      "commit": "08bcbf6cc8f70b6d3a0d74e7cdef524ae50f1736",
+      "shallow": false,
+      "working_tree_clean": true
+    },
+    {
+      "path": "ref-giulia/device/oneplus/giulia",
+      "origin": "https://github.com/clo-for-giulia/device_oneplus_giulia",
+      "branch": "celerity",
+      "commit": "1c8ef940210abed810dbe1f599d73182f3cd574f",
+      "shallow": false,
+      "working_tree_clean": true
+    },
+    {
+      "path": "ref-giulia/device/oneplus/sm8650-common",
+      "origin": "https://github.com/clo-for-giulia/device_oneplus_sm8650-common",
+      "branch": "celerity",
+      "commit": "87cfd721f5802415100d4d5b2051dbd7a7907656",
+      "shallow": false,
+      "working_tree_clean": true
+    },
+    {
+      "path": "ref-giulia/kernel/oneplus/sm8650",
+      "origin": "https://github.com/clo-for-giulia/android_kernel_oneplus_sm8650",
+      "branch": "celerity",
+      "commit": "eedf108fcf4a39346b74cbd1d262e7362a3abdaa",
+      "shallow": false,
+      "working_tree_clean": true
+    },
+    {
+      "path": "ref-giulia/kernel/oneplus/sm8650-build",
+      "origin": "https://github.com/clo-for-giulia/android_kernel_oneplus_sm8650-build",
+      "branch": "celerity",
+      "commit": "421157c571d39e2af6ced225c617bbc5892919f9",
+      "shallow": false,
+      "working_tree_clean": true
+    }
+  ]
 }
