@@ -79,5 +79,6 @@ The native RBE build passed all selected targets:
 `android.hardware.biometrics.fingerprint@2.3-service.oplus`,
 `android.hardware.sensors-service.oplus-multihal`, `audio_amplifier.qcom`,
 `librecovery_updater` and `selinux_policy` (`.repo/porsche-rbe-hals.log`).
-The generated graph contains no Penguin reference modules. Full images and
-VINTF compatibility remain pending.
+The generated graph contains no Penguin reference modules. Integrated boot,
+vendor_boot, DTBO and vendor_dlkm images now pass consistency checks; full
+VINTF compatibility and the complete OTA remain pending.

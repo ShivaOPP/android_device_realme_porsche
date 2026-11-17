@@ -1789,5 +1789,5 @@
     "Unselected reference copies would duplicate module names without source exclusions; each reference is excluded."
   ],
   "hardware_changes_from_penguin": [],
-  "validation": "PASS: selected touch, LiveDisplay, vibrator, fingerprint, sensors, audio amplifier, UFS recovery and selinux_policy targets; .repo/porsche-rbe-hals.log. Full integrated images and VINTF pending."
+  "validation": "PASS: selected Oplus HALs, UFS recovery, SELinux, and integrated boot/vendor_boot/DTBO/vendor_dlkm consistency. Full OTA/VINTF build still pending."
 }

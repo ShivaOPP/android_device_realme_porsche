@@ -106,9 +106,11 @@ a fresh checkout still needs the local `a17-port` commits listed in
 | SELinux | PASS: compilation, neverallows, contexts, Treble compatibility and final `sepolicy_test`; `.repo/porsche-rbe-selinux-02.log` |
 | Compiled DSP access audit | PASS: original Binder/FD/memfd permissions remain, normal client discovery retained, isolated discovery absent; `dsp-ipc-validation.json` |
 | Integrated boot/vendor_boot/DTBO/vendor_dlkm | PASS; `.repo/porsche-rbe-images.log` and `image-validation.json` |
-| Full userspace / OTA / VINTF | IN PROGRESS; current retry `.repo/porsche-rbe-ota-08.log` |
+| Full userspace / OTA / VINTF | IN PROGRESS; current retry `.repo/porsche-rbe-ota-09.log` |
 | Device boot and hardware operation | Not tested; generated-image checks do not prove runtime success |
 
+`python3 device/realme/porsche/porting/validate-images.py` repeats the image
+checks against actual build outputs without deleting inspection artifacts.
 The integrated image checks verify header v3, the compiled kernel payload,
 the primary A17 fstab at a supported first-stage path, all three Porsche DTBs,
 both Porsche overlays in the kernel's 14-entry DTBO table, 88 vendor_dlkm
@@ -180,6 +182,9 @@ No patch to those recipes is needed. Native image builds have now confirmed it.
 
 - Complete the full userspace/OTA build and merged VINTF validation. Resolve
   remaining compiler, ELF, resource or interface errors without dropping HALs.
+- The new V7 ADPF `AUDIO_PERFORMANCE` session mode is correctly enumerated but
+  unadvertised until the primary PowerHintSession implements it. Existing global
+  audio streaming hints remain. Do not claim the new mode is functional.
 - Test boot, recovery, encryption, suspend, UDFPS/HBM/press behavior, NFC/eSE,
   camera, audio, display, sensors, VoLTE, GPS, WLAN and Dolby on hardware.
   Retain isolated-compute DSP handle delivery on the runtime test list.

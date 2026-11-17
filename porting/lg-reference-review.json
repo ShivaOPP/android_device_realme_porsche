@@ -65,7 +65,7 @@
     "validation": "Native selinux_policy PASS, including final sepolicy_test; compiled DSP IPC audit PASS."
   },
   "hardware_values_imported": false,
-  "build_status": "Display libraries compiled and linked for both arches. Dual-ABI product integration and full OTA/VINTF retry are next.",
+  "build_status": "PASS: ARM/ARM64 display, selected Oplus HALs and UFS recovery, dual-ABI product, SELinux, integrated image/module/DTB consistency. Full OTA/VINTF in progress.",
   "verified_existing_integration": [
     "Current calcite central product/lunch registration and aospa-target inheritance remain valid.",
     "Native beans.xml plus JSON/local-manifest artifacts are retained.",
