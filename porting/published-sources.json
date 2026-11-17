@@ -1,0 +1,137 @@
+{
+  "branch": "porsche-aospa",
+  "owner": "ShivaOPP",
+  "repositories": [
+    {
+      "path": "device/realme/porsche",
+      "repository": "ShivaOPP/android_device_realme_porsche",
+      "upstream": "https://github.com/AOSPA/android_device_realme_porsche"
+    },
+    {
+      "path": "device/oneplus/sm8350-common",
+      "repository": "ShivaOPP/android_device_oneplus_sm8350-common",
+      "upstream": "https://github.com/PixelOS-Devices/android_device_oneplus_sm8350-common"
+    },
+    {
+      "path": "vendor/aospa",
+      "repository": "ShivaOPP/android_vendor_aospa",
+      "upstream": "https://github.com/AOSPA/android_vendor_aospa"
+    },
+    {
+      "path": "vendor/realme/porsche",
+      "repository": "ShivaOPP/proprietary_vendor_realme_porsche",
+      "upstream": "https://gitlab.com/NoPrincessHere/proprietary_vendor_realme_porsche"
+    },
+    {
+      "path": "vendor/oneplus/sm8350-common",
+      "repository": "ShivaOPP/proprietary_vendor_oneplus_sm8350-common",
+      "upstream": "https://gitlab.com/NoPrincessHere/proprietary_vendor_oneplus_sm8350-common"
+    },
+    {
+      "path": "vendor/oplus/camera",
+      "repository": "ShivaOPP/proprietary_vendor_oplus_camera",
+      "upstream": "https://gitlab.com/NoPrincessHere/proprietary_vendor_oplus_camera"
+    },
+    {
+      "path": "hardware/oplus",
+      "repository": "ShivaOPP/android_hardware_oplus",
+      "upstream": "https://github.com/PixelOS-AOSP/android_hardware_oplus"
+    },
+    {
+      "path": "hardware/dolby",
+      "repository": "ShivaOPP/android_hardware_dolby",
+      "upstream": "https://gitlab.com/PixelOS-AOSP/android_hardware_dolby"
+    },
+    {
+      "path": "hardware/pixelworks/interfaces",
+      "repository": "ShivaOPP/android_hardware_pixelworks_interfaces",
+      "upstream": "https://github.com/LineageOS/android_hardware_pixelworks_interfaces"
+    },
+    {
+      "path": "kernel/oneplus/sm8350",
+      "repository": "ShivaOPP/android_kernel_oneplus_sm8350",
+      "upstream": "https://github.com/PixelOS-Devices/android_kernel_oneplus_sm8350"
+    },
+    {
+      "path": "hardware/lineage/interfaces",
+      "repository": "ShivaOPP/android_hardware_lineage_interfaces",
+      "upstream": "https://github.com/LineageOS/android_hardware_lineage_interfaces"
+    },
+    {
+      "path": "device/lineage/sepolicy",
+      "repository": "ShivaOPP/android_device_lineage_sepolicy",
+      "upstream": "https://github.com/LineageOS/android_device_lineage_sepolicy"
+    },
+    {
+      "path": "vendor/qcom/opensource/audio-hal/primary-hal",
+      "repository": "ShivaOPP/android_hardware_qcom_audio",
+      "upstream": "https://github.com/AOSPA/android_hardware_qcom_audio"
+    },
+    {
+      "path": "hardware/qcom/display",
+      "repository": "ShivaOPP/android_hardware_qcom_display",
+      "upstream": "https://github.com/AOSPA/android_hardware_qcom_display"
+    },
+    {
+      "path": "hardware/qcom/gps",
+      "repository": "ShivaOPP/android_hardware_qcom_gps",
+      "upstream": "https://github.com/AOSPA/android_hardware_qcom_gps"
+    },
+    {
+      "path": "hardware/qcom/media",
+      "repository": "ShivaOPP/android_hardware_qcom_media",
+      "upstream": "https://github.com/AOSPA/android_hardware_qcom_media"
+    },
+    {
+      "path": "hardware/google/pixel",
+      "repository": "ShivaOPP/android_hardware_google_pixel",
+      "upstream": "https://github.com/LineageOS/android_hardware_google_pixel"
+    },
+    {
+      "path": "hardware/qcom-caf/common",
+      "repository": "ShivaOPP/android_hardware_qcom-caf_common",
+      "upstream": "https://github.com/LineageOS/android_hardware_qcom-caf_common"
+    },
+    {
+      "path": "vendor/qcom/opensource/thermal-hal",
+      "repository": "ShivaOPP/android_hardware_qcom_thermal",
+      "upstream": "https://github.com/AOSPA/android_hardware_qcom_thermal"
+    },
+    {
+      "path": "hardware/oplus/packages/EuiccPolicy",
+      "repository": "ShivaOPP/android_packages_apps_EuiccPolicy",
+      "upstream": "https://github.com/LineageOS/android_packages_apps_EuiccPolicy"
+    },
+    {
+      "path": "device/qcom/common",
+      "repository": "ShivaOPP/android_device_qcom_common",
+      "upstream": "https://github.com/AOSPA/android_device_qcom_common"
+    },
+    {
+      "path": "device/qcom/sepolicy",
+      "repository": "ShivaOPP/sepolicy",
+      "upstream": "https://git.codelinaro.org/clo/la/device/qcom/sepolicy"
+    },
+    {
+      "path": "build/make",
+      "repository": "ShivaOPP/android_build",
+      "upstream": "https://github.com/AOSPA/android_build"
+    },
+    {
+      "path": "build/soong",
+      "repository": "ShivaOPP/android_build_soong",
+      "upstream": "https://github.com/AOSPA/android_build_soong"
+    },
+    {
+      "path": "hardware/interfaces",
+      "repository": "ShivaOPP/android_hardware_interfaces",
+      "upstream": "https://github.com/AOSPA/android_hardware_interfaces"
+    },
+    {
+      "path": "frameworks/base",
+      "repository": "ShivaOPP/android_frameworks_base",
+      "upstream": "https://github.com/AOSPA/android_frameworks_base"
+    }
+  ],
+  "note": "Upstream source identities and old local histories remain recorded separately; no existing GitHub branch is rewritten."
+}

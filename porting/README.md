@@ -16,10 +16,11 @@ unselected reference files. AOSPA-specific resources, product inheritance and
 vendor hooks are preserved and translated to calcite.
 
 `sources.json` records inspected upstream baselines. Every edited repository
-uses a local `a17-port` branch; these branches have not been pushed. Upstream
-dependency revisions bootstrap the sources and do **not** contain this local
-port. Reproducing the port requires applying the local commits in all edited
-repositories, including `vendor/aospa`.
+uses a local `a17-port` branch, published as `porsche-aospa` under ShivaOPP.
+`published-sources.json` maps the required forks; `sources.json` preserves their
+original upstream identities. The publishing operation preserves existing remote
+branches. A separate `porsche-aospa-backup` repository provides pinned manifests,
+recovery instructions and the full source snapshot.
 
 | Android 14 path | Active Android 17 path / ownership |
 | --- | --- |
@@ -54,9 +55,10 @@ mapping for the bootloader's `ro.boot.prjname`.
 device dependencies. AOSPA's native dependency mechanism is instead
 `vendor/aospa/products/porsche/beans.xml`, which includes `platforms/lahaina.xml`.
 [`porsche.xml`](porsche.xml) is the flattened local-manifest equivalent for a
-fresh checkout. Its remote names are supplied by AOSPA's manifest. The base
-manifest already supplies the framework, QCOM interfaces, WLAN, NXP NFC and
-other platform projects; these are not redundantly cloned as device repos.
+fresh checkout. Its remote names are supplied by AOSPA's manifest. It replaces each required
+port dependency with its ShivaOPP fork, including the changed build/platform
+projects and the exact framework source. The backup repository also pins all
+unchanged source projects for complete recovery.
 
 Do not install this manifest over the current standalone Git checkouts. Lunch
 uses `AOSPA_SKIP_DEPENDENCIES=true` to protect their local port branches.
@@ -88,9 +90,10 @@ m -j16 otapackage check-vintf-all selinux_policy
 
 `lunch aospa_porsche-userdebug` also defaults to `cp2a`. Retry a failed sync
 with exactly the same sync command. The `-j16` build option is separate from
-Repo's required `-j48`. Dependency files describe upstream bootstrap revisions;
-a fresh checkout still needs the local `a17-port` commits listed in
-`commits.json`. Those local commits have not been pushed.
+Repo's required `-j48`. On a fresh checkout, install the published local manifest
+before sync, or follow the pinned source/complete snapshot recovery instructions
+in `https://github.com/ShivaOPP/porsche-aospa-backup`. The dependency files now
+select the published `porsche-aospa` branches; no manual cherry-pick is needed.
 
 ## Current validation
 
