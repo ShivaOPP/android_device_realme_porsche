@@ -261,3 +261,19 @@ reference defaults. Its sensors config loads `sensors.ssc.so` and
 `sensors.oplus.so`; FusionLight is not substituted. The selected Oplus HALs
 and native SELinux checks passed. The native recovery helper also passed after
 selecting BSG from the actual kernel's `CONFIG_SCSI_UFS_BSG=y` and public UAPI.
+
+## Integrated image milestone
+
+`m bootimage vendorbootimage dtboimage vendor_dlkmimage` passed with RBE
+(`.repo/porsche-rbe-images.log`). `image-validation.json` records actual image
+hashes, sizes and consistency checks: header v3 for boot/vendor_boot, the
+primary A17 `fstab.qcom` at a supported first-stage path, the compiled kernel
+payload, all three Porsche base DTBs, both Porsche overlays in the 14-entry
+DTBO table, all 88 vendor_dlkm modules, and six boot modules. Every module's
+vermagic matches `5.4.302-qgki-g69a5611a6c17`; the WLAN alias is present.
+EROFS integrity/extraction passed. AVB's boot security patch matches the
+primary A17 `2025-04-01` setting. Boot/vendor_boot/DTBO sizes fit the verified
+partitions. These are generated-image checks, not a device boot test.
+
+The complete OTA and VINTF retry is `.repo/porsche-rbe-ota-04.log`; final
+compatibility and full userspace results remain pending.
