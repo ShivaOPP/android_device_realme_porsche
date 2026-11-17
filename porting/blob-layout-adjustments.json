@@ -9,6 +9,14 @@
     "installed": "AOSPA vendor.qti.hardware.fm@1.0.vendor source interface",
     "preserved_prebuilt": "vendor/oneplus/sm8350-common:porsche_vendor_fm_blob",
     "reason": "The source HIDL interface generates vendor and framework variants; a second prebuilt at vendor/lib64/vendor.qti.hardware.fm@1.0.so causes duplicate image rules. Keep the A17 FM service and resolve its unchanged DT_NEEDED name to AOSPA interface glue.",
-    "todo": "Compile the interface and run the FM service ELF check to verify symbol closure."
+    "validation": {
+      "pass": true,
+      "consumer": "vendor/oneplus/sm8350-common/proprietary/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti",
+      "required_original_fm_exports": [
+        "_ZN6vendor3qti8hardware2fm4V1_06IFmHci10descriptorE"
+      ],
+      "all_required_exports_in_built_source_interface": true,
+      "scope": "Dynamic symbol names required by the primary A17 Bluetooth/FM service; no runtime FM test."
+    }
   }
 }

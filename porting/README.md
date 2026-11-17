@@ -4,7 +4,7 @@ This workspace targets AOSPA `calcite`, confirmed from the synced manifest and
 build system as Android 17 (`android-17.0.0_r1`, release configuration `cp2a`).
 The registered product is `aospa_porsche`, with
 `vendor/aospa/products/porsche/aospa_porsche.mk` as its product makefile.
-The port is being validated; it has not been boot-tested.
+A full signed OTA has been built and validated. It has not been boot-tested.
 
 ## Source ownership
 
@@ -99,22 +99,35 @@ a fresh checkout still needs the local `a17-port` commits listed in
 | Lunch and Soong/Kati/Ninja graph | PASS; `.repo/porsche-nothing-passed.log` and subsequent native builds |
 | Dependency JSON, XML, Python helpers, shell syntax | PASS; `python3 -m json.tool`, XML parser, Python AST, `bash -n` |
 | Blob inventory coverage | PASS: all 2,424 entries have files/install declarations; `blob-audit.json` |
-| Radio packaging | All 23 tracked A17 firmware files match generated makefile hashes |
+| Radio packaging | PASS: all 23 staged SHA-1 and final payload SHA-256 values match the primary A17 firmware |
 | Standalone kernel, modules, DTBs | PASS with r563880c; `kernel-validation.json` |
 | ARM and ARM64 display libraries | PASS; `.repo/porsche-rbe-display-02.log` |
 | Touch, LiveDisplay, vibrator, fingerprint, sensors, amplifier and UFS recovery | PASS; `.repo/porsche-rbe-hals.log` |
 | SELinux | PASS: compilation, neverallows, contexts, Treble compatibility and final `sepolicy_test`; `.repo/porsche-rbe-selinux-02.log` |
 | Compiled DSP access audit | PASS: original Binder/FD/memfd permissions remain, normal client discovery retained, isolated discovery absent; `dsp-ipc-validation.json` |
 | Integrated boot/vendor_boot/DTBO/vendor_dlkm | PASS; `.repo/porsche-rbe-images.log` and `image-validation.json` |
-| Full userspace / OTA / VINTF | IN PROGRESS; current retry `.repo/porsche-rbe-ota-09.log` |
+| AVB chains and filesystem integrity | PASS: all five expected chain keys/index locations, three boot hashes and six filesystem hashtrees; `avb-validation.json` |
+| Signed OTA metadata and contents | PASS: text/protobuf identity RE58B2L1, all 35 partitions, six-partition dynamic group, firmware hashes; no userdata; `ota-validation.json` |
+| VINTF, including actual kernel requirements | PASS: direct framework/vendor checks and full compatibility; `vintf-validation.json` |
+| Full userspace / OTA packaging | PASS; `.repo/porsche-rbe-ota-13.log` (exit 0) and `ota-validation.json` |
 | Device boot and hardware operation | Not tested; generated-image checks do not prove runtime success |
+
+The signed archive is `out/target/product/porsche/aospa_porsche-ota.zip`
+(2,821,877,963 bytes). `ota-validation.json` records its SHA-256 and the native
+signature-verification result. Repeat the OTA audit with:
+
+```bash
+python3 device/realme/porsche/porting/validate-ota.py out/target/product/porsche/aospa_porsche-ota.zip
+```
 
 `python3 device/realme/porsche/porting/validate-images.py` repeats the image
 checks against actual build outputs without deleting inspection artifacts.
 The integrated image checks verify header v3, the compiled kernel payload,
 the primary A17 fstab at a supported first-stage path, all three Porsche DTBs,
 both Porsche overlays in the kernel's 14-entry DTBO table, 88 vendor_dlkm
-modules and six boot modules. All module versions match the built kernel,
+modules and six boot modules. Both packed depmod graphs have complete dependency
+closure, including recovery's audio prerequisites and the WLAN alias. All module
+versions match the built kernel,
 `5.4.302-qgki-g69a5611a6c17`, and the WLAN alias is present. EROFS integrity
 passed; boot, vendor_boot and DTBO fit their verified partitions. AVB's boot
 SPL preserves the primary A17 `2025-04-01` setting.
@@ -149,6 +162,22 @@ verdict. No ELF-check bypass or SELinux enforcement disable was introduced.
   FM interface supplies one canonical module; the duplicate blob remains
   available for ABI comparison. Racing old directory recipes are removed while
   native AOSPA RFS and A17 ACDB/WLAN ownership remain.
+- Porsche adds framework-matrix entries for the actual retained touch,
+  LiveDisplay and HIDL GNSS service versions/instances. Calcite already supplies
+  kernel 5.4.302 compatibility requirements; those checks remain enabled.
+- The framework FCM 6 matrix referenced four removed AOSP HIDL definitions.
+  `hardware/interfaces` retains the actual frozen API sources and hash records
+  from AOSP Android 16 r4; no legacy service implementation is installed.
+  `legacy-api-provenance.json` records every restored file hash and source.
+- Calcite treats `TARGET_OTA_ASSERT_DEVICE` as one literal identity. The primary
+  A17 tree's `RMX3312,RE58B2L1` string would reject installation, so the port uses
+  native identity derivation from the actual `RE58B2L1` partition properties.
+  `validate-ota.py` checks final metadata against those properties.
+- The generated A17 vendor firmware calls a Lineage SHA-1 helper absent from
+  calcite. A Porsche-only bridge validates each original hash and calls native
+  `add-radio-file`, keeping all 23 firmware images in OTA staging.
+- The RMNET library enables its real legacy data API, matching both the
+  primary CAF hooks and calcite's 5.4 telephony setup; ELF checks stay enabled.
 - The shared service-context patch changes only the two stale QMS/IIop entries.
   Current CLO Binder QMS and HIDL IPerf mapping files remain hash-identical.
   The original narrow attempt was reverted as requested; after expanded
@@ -174,22 +203,29 @@ layout, despite retaining related README entries. All copies remain on disk.
 No unverified LTPO/HBP/FusionLight or stock touch backend was enabled.
 The A17 sensors config still loads `sensors.ssc.so` and `sensors.oplus.so`.
 
+`giulia-reference-review.md` covers the additional CLO SM8650 references. Their
+Oplus fork shares 766 ancestral commits with Penguin but diverges and removes
+required Porsche frontends. Its structure confirms the common/device ownership
+and firmware bridge. It prompted packed depmod inventory/dependency checks,
+which pass for all six boot and 88 vendor modules. No SM8650 settings were copied.
+The references are excluded with `ref-giulia/.find-ignore`; a fresh native
+`m nothing` passed after all five full-history checkouts completed.
+
 The obsolete DTB recipe concern was resolved by checking generated Ninja:
 Kati correctly defers its `find` commands to execution after the kernel build.
 No patch to those recipes is needed. Native image builds have now confirmed it.
 
 ## Remaining TODO(porsche)
 
-- Complete the full userspace/OTA build and merged VINTF validation. Resolve
-  remaining compiler, ELF, resource or interface errors without dropping HALs.
 - The new V7 ADPF `AUDIO_PERFORMANCE` session mode is correctly enumerated but
   unadvertised until the primary PowerHintSession implements it. Existing global
   audio streaming hints remain. Do not claim the new mode is functional.
 - Test boot, recovery, encryption, suspend, UDFPS/HBM/press behavior, NFC/eSE,
   camera, audio, display, sensors, VoLTE, GPS, WLAN and Dolby on hardware.
   Retain isolated-compute DSP handle delivery on the runtime test list.
-- Verify the FM source interface's ELF symbol closure against the retained A17
-  service and duplicate comparison blob during the full build.
+- Test Bluetooth/FM behavior on hardware. The primary service's required FM
+  export is present in the built AOSPA source interface; the original comparison
+  blob is preserved (`blob-layout-adjustments.json`).
 - OEM fast-charge status has no exact calcite overlay resource. Calcite derives
   battery charging speed from health HAL wattage; validate the runtime indicator.
 - Optional touch glove mode, extra LiveDisplay controls, vibrator overrides and
@@ -216,5 +252,5 @@ git -C vendor/realme-a17-ref/porsche sparse-checkout disable
 ```
 
 `.find-ignore` markers and product source exclusions keep preserved Android14,
-LG and Penguin references out of both Soong and Make scans. Remove those guards
+LG, Giulia and Penguin references out of both Soong and Make scans. Remove those guards
 only when intentionally reactivating a reference.

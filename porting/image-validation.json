@@ -22,6 +22,12 @@
   },
   "vendor_dlkm_module_count": 88,
   "all_module_vermagic_matches_kernel": true,
+  "vendor_boot_dependency_closure": true,
+  "vendor_dlkm_dependency_closure": true,
+  "vendor_boot_depmod_nodes": 6,
+  "vendor_dlkm_depmod_nodes": 88,
+  "vendor_dlkm_load_count": 82,
+  "all_boot_module_vermagic_matches_kernel": true,
   "wlan_alias_present": true,
   "porsche_dtbs": [
     {
@@ -71,7 +77,7 @@
       "file": "dtbo.img",
       "bytes": 25165824,
       "partition_limit": 25165824,
-      "sha256": "b3bd0714dd291d7d0afb66dcf6a43585ce170014430afa9d973257800c02b92b"
+      "sha256": "cf7eeab7b7134225f9e52e93191c2cbb15b69567be1e117d0ab39f2765daf15b"
     },
     {
       "file": "vendor_dlkm.img",
@@ -81,10 +87,8 @@
     }
   ],
   "erofs_check": "PASS, fsck.erofs --extract",
-  "scope": "Generated image consistency checks; no device boot or runtime hardware testing.",
-  "all_boot_module_vermagic_matches_kernel": true,
   "avb_boot_security_patch": "2025-04-01",
   "avb_boot_security_patch_matches_primary_A17": true,
-  "fstab_location_supported_by_calcite_fs_mgr": true,
-  "flat_boot_module_directory_supported_by_init": true
+  "inspection_directory": ".repo/porsche-image-validation-gb0sn11a",
+  "scope": "Generated-image consistency; no device boot or runtime hardware test."
 }

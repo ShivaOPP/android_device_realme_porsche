@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "native_build_exit": 0,
+  "command": "m -j16 otapackage check-vintf-all selinux_policy",
+  "lunch": "aospa_porsche-cp2a-userdebug",
+  "rbe": "Enabled using the existing rbe_auto helper.",
+  "log": ".repo/porsche-rbe-ota-13.log",
+  "log_sha256": "c25f749b526b252cbc127e6fbbcb16ff0e364228d24f96f0e2d5b831e630aeef",
+  "rbe_stats": "RBE Stats: down 13.24 MB, up 0 B, 82 cache hits",
+  "signed_ota": "ota-validation.json",
+  "avb": "avb-validation.json",
+  "images_and_kernel_module_closure": "image-validation.json",
+  "vintf": "vintf-validation.json",
+  "selinux": "context-fix-validation.json",
+  "post_reference_dry_build": {
+    "exit": 0,
+    "log": ".repo/porsche-reference-check.log"
+  },
+  "remaining_build_blockers": [],
+  "runtime_boot_tested": false,
+  "runtime_hardware_tested": false,
+  "scope": "Successful complete native build and artifact checks; runtime bootability requires hardware validation.",
+  "nonfatal_warnings": [
+    "Native depmod staging reports absent modules.order/modules.builtin/modules.builtin.modinfo; actual packed depmod inventories and dependency closure pass.",
+    "Calcite SystemUI R8 reports API 37 and duplicate framework GUI class warnings; optimization/signing and the complete native build pass."
+  ]
+}

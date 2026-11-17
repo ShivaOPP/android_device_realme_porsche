@@ -65,5 +65,11 @@
     "uvite": "require board=lahaina|RE58B2L1",
     "android17": "require board=lahaina|porsche|RE58B2L1|RMX3312",
     "reason": "Prefer the verified A17 bootloader board acceptance list."
+  },
+  "ota_device_assertion": {
+    "primary_reference": "RMX3312,RE58B2L1",
+    "calcite": "Native ro.product.device derivation; RE58B2L1 in all five built partition property files.",
+    "reason": "Calcite BuildInfo treats ota_override_device as one literal string; comma-separated aliases would fail the recovery pipe-list comparison.",
+    "todo": "Keep native text and protobuf device assertions aligned with the actual generated partition identity; never broaden using unverified aliases."
   }
 }

@@ -1789,5 +1789,5 @@
     "Unselected reference copies would duplicate module names without source exclusions; each reference is excluded."
   ],
   "hardware_changes_from_penguin": [],
-  "validation": "PASS: selected Oplus HALs, UFS recovery, SELinux, and integrated boot/vendor_boot/DTBO/vendor_dlkm consistency. Full OTA/VINTF build still pending."
+  "validation": "PASS: ARM/ARM64 display, selected Oplus HALs, UFS recovery, SELinux, integrated images and module dependency closure, VINTF with kernel requirements, and full signed OTA with metadata/firmware audit. Hardware boot remains untested."
 }

@@ -81,4 +81,11 @@ The native RBE build passed all selected targets:
 `librecovery_updater` and `selinux_policy` (`.repo/porsche-rbe-hals.log`).
 The generated graph contains no Penguin reference modules. Integrated boot,
 vendor_boot, DTBO and vendor_dlkm images now pass consistency checks; full
-VINTF compatibility and the complete OTA remain pending.
+VINTF compatibility now passes, including actual kernel requirements
+(`vintf-validation.json`). The full signed OTA and its partition/firmware audit now pass
+(`ota-validation.json`).
+
+The additional Giulia CLO fork is reviewed in `giulia-reference-review.md`. It
+shares 766 ancestral commits with Penguin but has diverged, and removes the
+fingerprint/vibrator frontends Porsche retains. It is a structure reference;
+the active PixelOS choice remains supported by the completed native build.
