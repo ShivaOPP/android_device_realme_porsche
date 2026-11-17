@@ -43,6 +43,7 @@ def main():
                    (target / "META/dynamic_partitions_info.txt").read_text().splitlines()
                    if "=" in line)
     with zipfile.ZipFile(ota) as package:
+        metadata_proto = package.read("META-INF/com/android/metadata.pb")
         metadata = dict(line.split("=", 1) for line in
                         package.read("META-INF/com/android/metadata").decode().splitlines()
                         if "=" in line)
@@ -59,6 +60,14 @@ def main():
             require(length < 128 * 1024 * 1024, "Unexpected manifest size")
             manifest = payload.read(length)
             require(len(manifest) == length, "Truncated payload manifest")
+    decoded_metadata = subprocess.check_output([
+        str(tools / "aprotoc"), "--decode=build.tools.releasetools.OtaMetadata",
+        "--proto_path=build/make/tools/releasetools", "ota_metadata.proto",
+    ], input=metadata_proto, cwd=root).decode()
+    for state in ["precondition", "postcondition"]:
+        block = re.search(rf"^{state} \{{\n(.*?)^\}}", decoded_metadata, re.M | re.S).group(1)
+        devices = set(re.findall(r'^  device: "([^"]+)"$', block, re.M))
+        require(devices == {identity}, f"Protobuf {state} device identity mismatch")
     decoded = subprocess.check_output([
         str(tools / "aprotoc"), "--decode=chromeos_update_engine.DeltaArchiveManifest",
         "--proto_path=system/update_engine", "update_metadata.proto",
@@ -106,7 +115,8 @@ def main():
     result = {
         "pass": True, "ota": str(ota.relative_to(root)), "bytes": ota.stat().st_size,
         "sha256": digest(ota), "signature": "PASS, native verifier with actual build test certificate",
-        "metadata": metadata, "payload_major_version": version,
+        "metadata": metadata, "protobuf_device_assertions": identity,
+        "payload_major_version": version,
         "partitions": partitions, "payload_matches_ab_partition_list": True,
         "userdata_in_payload": False, "primary_radio_images_verified": len(radio),
         "radio_payload_sha256_matches_primary": True,
