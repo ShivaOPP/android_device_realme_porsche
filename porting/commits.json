@@ -4,9 +4,11 @@
     {
       "path": "device/realme/porsche",
       "baseline": "93aca6f949e2352216e3875f899b8e1b84446008",
-      "head": "ad0ea77c5031a147769e87e24b657f0b8a898b85",
+      "head": "ec70b8b887a8be5148bcc6c9a9c8303df659808d",
       "branch": "a17-port",
       "commits_after_baseline": [
+        "ec70b8b dependencies: publish reproducible porsche source mappings",
+        "dbbb000 porsche: record final validated local port commit inventory",
         "ad0ea77 porsche: record successful signed calcite OTA and complete native validation",
         "78051b2 porsche: review Giulia CLO structure and document divergent Oplus lineage",
         "ceb53f6 porsche: audit packed recovery and vendor kernel module dependency closure",
@@ -71,9 +73,10 @@
     {
       "path": "vendor/aospa",
       "baseline": "519bf66a7a393a98a2a1adbec559833ae86e9cef",
-      "head": "8c463f466c31d905745782e9188d718357d3aad6",
+      "head": "dd7fcfcb42369830e0c8d061599d17dddf4ffcac",
       "branch": "a17-port",
       "commits_after_baseline": [
+        "dd7fcfc dependencies: select ShivaOPP forks for the porsche port",
         "8c463f4 porsche: preserve the primary A17 tree dual-ABI app support",
         "151261e porsche: order CLO domain declarations before policy extensions",
         "203d291 build: share legacy QTI mountpoints with Soong mkdir modules",
@@ -358,12 +361,12 @@
       "head": "acc799abbd32464d8b558723ebdff7739158e0ca",
       "branch": "a17-port",
       "commits_after_baseline": [
-        "acc799a sepolicy: keep current CLO QMS and IPerf service contexts",
-        "2a7fd19 Revert \"sepolicy: remove stale QMS vendor-Binder and unused IIop contexts\"",
-        "c9f9220 sepolicy: remove stale QMS vendor-Binder and unused IIop contexts"
+        "acc799ab sepolicy: keep current CLO QMS and IPerf service contexts",
+        "2a7fd193 Revert \"sepolicy: remove stale QMS vendor-Binder and unused IIop contexts\"",
+        "c9f9220c sepolicy: remove stale QMS vendor-Binder and unused IIop contexts"
       ],
       "working_tree_changes": [],
-      "shallow": true
+      "shallow": false
     },
     {
       "path": "device/qcom/sepolicy",
@@ -371,11 +374,11 @@
       "head": "b0e119091f787be8cb4d22a8a4db6fb98e7b43af",
       "branch": "a17-port",
       "commits_after_baseline": [
-        "b0e1190 sepolicy: preserve CLO DSP shared-memory buffer permissions",
-        "723fae3 sepolicy: retain brokered DSP IPC without isolated compute discovery"
+        "b0e11909 sepolicy: preserve CLO DSP shared-memory buffer permissions",
+        "723fae36 sepolicy: retain brokered DSP IPC without isolated compute discovery"
       ],
       "working_tree_changes": [],
-      "shallow": true
+      "shallow": false
     },
     {
       "path": "build/make",
@@ -383,10 +386,10 @@
       "head": "97df0ea4521f519c46b4640039e1488051db5dcf",
       "branch": "a17-port",
       "commits_after_baseline": [
-        "97df0ea build: configure the requested BuildBuddy RBE client"
+        "97df0ea452 build: configure the requested BuildBuddy RBE client"
       ],
       "working_tree_changes": [],
-      "shallow": true
+      "shallow": false
     },
     {
       "path": "build/soong",
@@ -394,10 +397,10 @@
       "head": "198c84cd85dde73dd7e8963cfd7a76afafd4e044",
       "branch": "a17-port",
       "commits_after_baseline": [
-        "198c84c soong: select the requested BuildBuddy RBE client"
+        "198c84cd85 soong: select the requested BuildBuddy RBE client"
       ],
       "working_tree_changes": [],
-      "shallow": true
+      "shallow": false
     },
     {
       "path": "hardware/interfaces",
@@ -405,10 +408,16 @@
       "head": "34068eacac0738c3b778cede7360d89e7f44d6ae",
       "branch": "a17-port",
       "commits_after_baseline": [
-        "34068ea interfaces: retain frozen AOSP HIDL definitions referenced by calcite FCM 6"
+        "34068eacac interfaces: retain frozen AOSP HIDL definitions referenced by calcite FCM 6"
       ],
       "working_tree_changes": [],
-      "shallow": true
+      "shallow": false
     }
-  ]
+  ],
+  "publication": {
+    "owner": "ShivaOPP",
+    "branch": "porsche-aospa",
+    "mapping": "published-sources.json",
+    "note": "This inventory-only commit follows the device HEAD listed here. Existing GitHub branches are preserved. All selected port histories are now full."
+  }
 }
