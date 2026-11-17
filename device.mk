@@ -110,6 +110,7 @@ PRODUCT_PACKAGES += \
     AOSPAPorscheSystemUI \
     PorscheNfc
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest_porsche.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/compatibility_matrix.porsche.xml
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/realme/porsche/porsche-vendor.mk)

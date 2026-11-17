@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-License-Identifier: Apache-2.0
+    Framework compatibility for the retained A17 Porsche services. Calcite's
+    native matrix does not inherit the PixelOS/Lineage vendor interface matrix,
+    and its QTI matrix covers AIDL GNSS rather than our retained HIDL service.
+-->
+<compatibility-matrix version="4.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>vendor.lineage.livedisplay</name>
+        <version>1</version>
+        <interface>
+            <name>IPictureAdjustment</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISunlightEnhancement</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.lineage.touch</name>
+        <version>1</version>
+        <interface>
+            <name>IHighTouchPollingRate</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ITouchscreenGesture</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.gnss</name>
+        <version>1.2</version>
+        <version>2.1</version>
+        <version>3.0</version>
+        <version>4.0</version>
+        <interface>
+            <name>ILocHidlGnss</name>
+            <instance>gnss_vendor</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
