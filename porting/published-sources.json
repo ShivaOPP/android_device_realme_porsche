@@ -126,14 +126,9 @@
       "path": "hardware/interfaces",
       "repository": "ShivaOPP/android_hardware_interfaces",
       "upstream": "https://github.com/AOSPA/android_hardware_interfaces"
-    },
-    {
-      "path": "frameworks/base",
-      "repository": "ShivaOPP/android_frameworks_base",
-      "upstream": "https://github.com/AOSPA/android_frameworks_base"
     }
   ],
-  "note": "Upstream source identities and old local histories remain recorded separately; no existing GitHub branch is rewritten.",
+  "note": "Required device/dependency repositories and edited platform trees only. Unmodified frameworks/base comes directly from the AOSPA calcite manifest. Full-source and binary recovery archives were removed at user request.",
   "local_branch": "a17-port-shiva",
   "authorship": "Only local port commits are author/committer-corrected; original branches and upstream authors remain intact."
 }

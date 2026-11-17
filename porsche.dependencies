@@ -142,11 +142,5 @@
     "repository": "ShivaOPP/android_hardware_interfaces",
     "target_path": "hardware/interfaces",
     "revision": "porsche-aospa-shiva"
-  },
-  {
-    "remote": "github",
-    "repository": "ShivaOPP/android_frameworks_base",
-    "target_path": "frameworks/base",
-    "revision": "porsche-aospa-shiva"
   }
 ]

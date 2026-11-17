@@ -50,6 +50,4 @@
   <project path="build/soong" name="ShivaOPP/android_build_soong" remote="github" revision="porsche-aospa-shiva" />
   <remove-project path="hardware/interfaces" optional="true" />
   <project path="hardware/interfaces" name="ShivaOPP/android_hardware_interfaces" remote="github" revision="porsche-aospa-shiva" />
-  <remove-project path="frameworks/base" optional="true" />
-  <project path="frameworks/base" name="ShivaOPP/android_frameworks_base" remote="github" revision="porsche-aospa-shiva" />
 </manifest>

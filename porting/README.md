@@ -18,9 +18,11 @@ vendor hooks are preserved and translated to calcite.
 `sources.json` records inspected upstream baselines. Every edited repository
 uses a local `a17-port-shiva` branch, published as `porsche-aospa-shiva` under ShivaOPP.
 `published-sources.json` maps the required forks; `sources.json` preserves their
-original upstream identities. The publishing operation preserves existing remote
-branches. A separate `porsche-aospa-backup` repository provides pinned manifests,
-recovery instructions and the full source snapshot.
+original upstream identities. The required repositories expose the corrected
+`porsche-aospa-shiva` branch. Unmodified `frameworks/base` comes directly from
+AOSPA calcite. A separate `porsche-aospa-backup` repository contains pinned
+manifests and validation reports; full-source and binary archive uploads were
+removed at the user's request.
 
 | Android 14 path | Active Android 17 path / ownership |
 | --- | --- |
