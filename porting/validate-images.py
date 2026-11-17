@@ -20,6 +20,17 @@ def require(condition, description):
         raise RuntimeError(description)
 
 
+def module_dependencies(text, available, label):
+    graph = {}
+    for line in text.splitlines():
+        name, dependencies = line.split(":", 1)
+        graph[Path(name).name] = {Path(item).name for item in dependencies.split()}
+    require(set(graph) == available, f"{label} depmod inventory differs from packed modules")
+    for name, dependencies in graph.items():
+        require(dependencies <= available, f"{label} dependencies missing for {name}")
+    return graph
+
+
 def cpio(data):
     files = {}
     offset = 0
@@ -81,6 +92,9 @@ def main():
     load_lists = {name: data.decode() for name, data in vendor.items() if "modules.load" in name}
     for name, listing in load_lists.items():
         require(set(listing.split()) <= expected_boot, f"Missing boot module in {name}")
+    boot_dep = [data.decode() for name, data in vendor.items() if name.endswith("/modules.dep")]
+    require(len(boot_dep) == 1, "Expected one boot module dependency graph")
+    boot_graph = module_dependencies(boot_dep[0], expected_boot, "vendor_boot")
     extracted = scratch / "vendor_dlkm"
     erofs = subprocess.run([str(tools / "fsck.erofs"), f"--extract={extracted}",
                             str(product / "vendor_dlkm.img")], check=True, capture_output=True)
@@ -88,6 +102,11 @@ def main():
     modules = {file.name: file.read_bytes() for file in extracted.rglob("*.ko")}
     expected = set((common / "kernel-modules.list").read_text().split())
     require(set(modules) == expected, "vendor_dlkm module inventory mismatch")
+    vendor_graph = module_dependencies((extracted / "lib/modules/modules.dep").read_text(),
+                                       expected, "vendor_dlkm")
+    vendor_load = (extracted / "lib/modules/modules.load").read_text().split()
+    require({Path(name).name for name in vendor_load} <= expected,
+            "Vendor load list references missing modules")
     release = (kernel / "include/config/kernel.release").read_text().strip()
     for name, data in [*modules.items(), *packed_boot.items()]:
         match = re.search(rb"vermagic=([^\0]+)", data)
@@ -137,6 +156,9 @@ def main():
         "fstab_paths": list(fstabs), "fstab_matches_primary_A17": True,
         "boot_modules": sorted(expected_boot), "ramdisk_module_load_lists": load_lists,
         "vendor_dlkm_module_count": len(modules), "all_module_vermagic_matches_kernel": True,
+        "vendor_boot_dependency_closure": True, "vendor_dlkm_dependency_closure": True,
+        "vendor_boot_depmod_nodes": len(boot_graph),
+        "vendor_dlkm_depmod_nodes": len(vendor_graph), "vendor_dlkm_load_count": len(vendor_load),
         "all_boot_module_vermagic_matches_kernel": True, "wlan_alias_present": True,
         "porsche_dtbs": dtbs, "dtbo_table_entries": count, "dtbo_table_bytes": total,
         "porsche_dtbos": dtbos, "images": images, "erofs_check": "PASS, fsck.erofs --extract",
